@@ -20,10 +20,11 @@
     font-weight: 300;
     text-transform: uppercase;
     text-align: center;
+    color: #87888A;
 }
   .services p {
     text-align: center;
-    color: #aeaeae;
+    color: #87888A;
     font-size: 13px;
   }
 
@@ -42,10 +43,10 @@
     margin-top: 10px;
     font-size: 60px;
     font-weight: 200;
-    color: #aeaeae;
+    color: $gray;
 
   }
   .video p {
-    color: #aeaeae;
+    color: $red;
     font-size: 13px;
 }
