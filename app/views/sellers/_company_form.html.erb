@@ -1,0 +1,12 @@
+<%= simple_form_for [@seller] do |f| %>
+  <%= f.input :cnpj %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :address_number %>
+  <%= f.input :address_complement %>
+  <%= f.input :neighborhood %>
+  <%= f.input :city %>
+  <%= f.input :state %>
+  <%= f.input :zip_code %>
+  <%= f.submit "Save Infos", class: "btn btn-primary" %>
+<% end %>
