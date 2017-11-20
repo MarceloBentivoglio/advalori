@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120185331) do
+ActiveRecord::Schema.define(version: 20171120185736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,8 +118,12 @@ ActiveRecord::Schema.define(version: 20171120185331) do
     t.string   "name"
     t.string   "cpf"
     t.string   "phone_number"
+    t.integer  "seller_id"
+    t.integer  "investor_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["investor_id"], name: "index_users_on_investor_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["seller_id"], name: "index_users_on_seller_id", using: :btree
   end
 
   add_foreign_key "expenses", "sellers"
@@ -128,4 +132,6 @@ ActiveRecord::Schema.define(version: 20171120185331) do
   add_foreign_key "invoices", "sellers"
   add_foreign_key "orders", "investors"
   add_foreign_key "orders", "invoices"
+  add_foreign_key "users", "investors"
+  add_foreign_key "users", "sellers"
 end
