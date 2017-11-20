@@ -1,1 +1,51 @@
 // Specific CSS for your home-page
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.services {
+  padding-top: 60px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .services h2 {
+    font-size: 20px;
+    letter-spacing: -1px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+}
+  .services p {
+    text-align: center;
+    color: #aeaeae;
+    font-size: 13px;
+  }
+
+  .b-signup {
+    margin-top: 10px;
+  }
+
+  .navy-line {
+      width: 60px;
+      height: 1px;
+      margin: 60px auto 0;
+      border-bottom: 2px solid #3798d3;
+    }
+
+  .video h2 {
+    margin-top: 10px;
+    font-size: 60px;
+    font-weight: 200;
+    color: #aeaeae;
+
+  }
+  .video p {
+    color: #aeaeae;
+    font-size: 13px;
+}
