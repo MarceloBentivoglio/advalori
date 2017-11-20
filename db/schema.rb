@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120184553) do
+ActiveRecord::Schema.define(version: 20171120184734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20171120184553) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["seller_id"], name: "index_expenses_on_seller_id", using: :btree
+  end
+
+  create_table "installments", force: :cascade do |t|
+    t.string   "number"
+    t.float    "value"
+    t.date     "due_date"
+    t.integer  "invoice_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["invoice_id"], name: "index_installments_on_invoice_id", using: :btree
   end
 
   create_table "investors", force: :cascade do |t|
@@ -102,5 +112,6 @@ ActiveRecord::Schema.define(version: 20171120184553) do
   end
 
   add_foreign_key "expenses", "sellers"
+  add_foreign_key "installments", "invoices"
   add_foreign_key "invoices", "sellers"
 end
