@@ -1,0 +1,2 @@
+class InvoicePayer < ApplicationRecord
+end
