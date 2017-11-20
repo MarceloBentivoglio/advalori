@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount Attachinary::Engine => "/attachinary"
 
   devise_for :users
   root to: 'pages#home'
@@ -7,4 +6,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :sellers
 
+  mount Attachinary::Engine => "/attachinary"
 end

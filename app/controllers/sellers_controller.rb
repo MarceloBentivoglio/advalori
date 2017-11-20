@@ -8,7 +8,7 @@ class SellersController < ApplicationController
     @seller = Seller.new(seller_params)
 
     if @seller.save
-      current_user.seller_id = @seller
+      current_user.seller_id = @seller.id
       current_user.save
       redirect_to user_path(current_user)
     else
