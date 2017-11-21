@@ -2,6 +2,7 @@ class Invoice < ApplicationRecord
   belongs_to :seller
   belongs_to :invoice_payer
   has_many :installments
+  has_many :orders
   has_attached_file :xml_file
   do_not_validate_attachment_file_type :xml_file
   after_create :parse_file

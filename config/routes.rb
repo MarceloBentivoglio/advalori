@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [:show]
   resources :sellers
-  resources :invoice_payers
+  resources :invoice_payers, only: [:new, :create, :destroy, :show]
 
   resources :invoices, only: [:new, :create, :index]
   resources :expenses, only: [:new, :create, :update, :destroy, :index]
+
+  get "expenses_chart", to: 'charts#expenses_chart'
 
   mount Attachinary::Engine => "/attachinary"
 end

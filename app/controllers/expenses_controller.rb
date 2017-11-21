@@ -14,7 +14,7 @@ class ExpensesController < ApplicationController
 
   def create
     @expense = Expense.new(expense_params)
-    @expense.seller_id = current_user.seller_id
+    @expense.seller = current_user.seller
 
     if @expense.save
       redirect_to expenses_path

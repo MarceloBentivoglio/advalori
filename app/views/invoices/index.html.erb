@@ -15,11 +15,11 @@
         <tbody>
         <% @invoices.each do |invoice| %>
         <tr class="tr-highlight-overdue">
-          <td><%= invoice_payers.name %></td>
+          <td><%= invoice.invoice_payers.name %></td>
           <td><%= invoice.number  %></td>
-          <td><%= installments.number %></td>
-          <td><%= installments.value %></td>
-          <td><%= installments.due_date %></td>
+          <td><%= invoice.installments.number %></td>
+          <td><%= invoice.installments.value %></td>
+          <td><%= invoice.installments.due_date %></td>
         </tr>
         <% end %>
       </tbody>
