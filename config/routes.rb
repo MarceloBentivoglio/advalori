@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [:show]
   resources :sellers
+  resources :investors
   resources :invoice_payers, only: [:new, :create, :destroy, :show]
 
   resources :invoices, only: [:new, :create, :index]
