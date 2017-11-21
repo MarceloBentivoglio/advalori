@@ -1,0 +1,30 @@
+    <div class="container">
+      <div class="col-lg-12">
+        <h5>Open Invoices</h5>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Payer</th>
+            <th>Reference Number</th>
+            <th>Installment</th>
+            <th>Invoice Amount</th>
+            <th>Due date</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @invoices.each do |invoice| %>
+        <tr class="tr-highlight-overdue">
+          <td><%= invoice_payers.name %></td>
+          <td><%= invoice.number  %></td>
+          <td><%= installments.number %></td>
+          <td><%= installments.value %></td>
+          <td><%= installments.due_date %></td>
+        </tr>
+        <% end %>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+
