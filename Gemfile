@@ -16,6 +16,8 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'chartkick', '~> 2.2.0'
+gem "groupdate"
 
 gem "simple_form"
 gem 'cloudinary', '1.1.7'
