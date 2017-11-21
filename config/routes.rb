@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :sellers
   resources :invoices, only: [:new, :create]
+  resources :expenses, only: [:new, :create, :index]
 
   mount Attachinary::Engine => "/attachinary"
 end

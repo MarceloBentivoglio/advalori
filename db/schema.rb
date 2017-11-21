@@ -88,10 +88,6 @@ ActiveRecord::Schema.define(version: 20171121125322) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.integer  "invoice_payer_id"
-    t.string   "xml_file_name"
-    t.string   "xml_content_type"
-    t.integer  "xml_file_size"
-    t.datetime "xml_updated_at"
     t.string   "xml_file_file_name"
     t.string   "xml_file_content_type"
     t.integer  "xml_file_file_size"
