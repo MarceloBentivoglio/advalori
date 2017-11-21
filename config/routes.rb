@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   resources :invoices, only: [:new, :create, :index]
   resources :expenses, only: [:new, :create, :update, :destroy, :index]
 
+  get "expenses_chart", to: 'charts#expenses_chart'
+
   mount Attachinary::Engine => "/attachinary"
 end
