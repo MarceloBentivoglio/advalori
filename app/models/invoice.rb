@@ -26,7 +26,6 @@ class Invoice < ApplicationRecord
       installment.due_date = dup.search('dVenc').text.strip
       installment.save
     end
-
   end
 end
 
