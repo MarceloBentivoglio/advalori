@@ -30,7 +30,7 @@
   </table>
 
   <div class="chart">
-    <%= line_chart Expense.group_by_day(:due_date).count %>
+    <%= line_chart expenses_chart_path %>
   </div>
 
 </div>
