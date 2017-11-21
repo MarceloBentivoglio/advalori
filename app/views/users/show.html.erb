@@ -1,2 +1,47 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="modal-button">
+  Add New Invoice
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Invoice</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(@invoice) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+         <div class="control-group">
+          <%= f.label :xml_file, class: 'control-label' %>
+          <div class="controls">
+            <%= f.file_field :xml_file %>
+          </div>
+        </div>
+        <div class="form-actions">
+          <%= f.submit nil, :class => 'btn btn-primary' %>
+          <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+          invoices_path, :class => 'btn' %>
+        </div>
+      </div>
+
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<% content_for(:js) do %>
+<%= javascript_tag do %>
+
+$('#modal-button').click(function() {
+$('#myModal').modal();
+});
+
+
+<% end %>
+<% end %>
