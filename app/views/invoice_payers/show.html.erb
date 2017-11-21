@@ -1,0 +1,38 @@
+    <div class="container">
+      <div class="col-lg-12">
+        <h5>Invoice Payer</h5>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>CNPJ</th>
+            <th>Name</th>
+            <th>Address Number</th>
+            <th>Address Complement</th>
+            <th>Neighborhood </th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip Code</th>
+            <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @invoice_payers.each do |invoice| %>
+        <tr class="tr-highlight-overdue">
+          <td><%= invoice.cnpj %></td>
+          <td><%= invoice.name %></td>
+          <td><%= invoice.address_number %></td>
+          <td><%= invoice.address_complement %></td>
+          <td><%= invoice.neighborhood %></td>
+          <td><%= invoice.city %></td>
+          <td><%= invoice.state %></td>
+          <td><%= invoice.zip_code %></td>
+          <td><%= invoice.phone_number %></td>
+        </tr>
+        <% end %>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+

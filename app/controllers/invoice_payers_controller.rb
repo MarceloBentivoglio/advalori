@@ -5,12 +5,15 @@ class InvoicePayersController < ApplicationController
 
   def create
     @invoice_payer = InvoicePayer.new(invoice_payer_params)
-
     if @invoice_payer.save
       redirect_to user_path(current_user)
     else
       render :new
     end
+  end
+
+  def show
+    @invoice_payers = InvoicePayer.all
   end
 
   private
