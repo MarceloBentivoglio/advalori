@@ -1,5 +1,6 @@
 <div class="container">
   <table class="table">
+    <%= link_to "Add Expense", new_expense_path, class: "btn btn-primary btn-md pull-right" %>
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -15,8 +16,18 @@
           <td><%= expense.supplier %></td>
           <td><%= expense.value %></td>
           <td><%= expense.due_date %></td>
+          <td>
+            <%= link_to(expenses_path, class: "btn btn-info btn-xs") do %>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to(expenses_path, class: "btn btn-danger btn-xs") do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <% end %>
+           </td>
         </tr>
       <% end %>
+
     </tbody>
   </table>
+
 </div>
