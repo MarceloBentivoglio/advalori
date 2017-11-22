@@ -1,108 +1,116 @@
 // Specific CSS for your home-page
 
-  body {
-    font-family: $font-family-sans-serif;
-    $font-size-base: 18px;
-    line-height: 1.42857143;
-    color: $advalori-medium-gray;
-    background-color: #fff;
-  }
+body {
+  font-family: $font-family-sans-serif;
+  $font-size-base: 18px;
+  line-height: 1.42857143;
+  color: $advalori-dark-gray;
+  background-color: #fff;
+}
 
-  .container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-  }
+p {
+  font-weight: 300;
+}
 
-  .services {
-    padding-top: 30px;
-  }
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-  .row {
-      margin-right: -15px;
-      margin-left: -15px;
-    }
+.services {
+  padding-top: 30px;
+}
 
-    .services p {
-      text-align: center;
-    }
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
 
-    .b-signup, b-signup-now {
-      margin-top: 20px;
-      $border-radius-large: 1px;
-    }
+.services p {
+  text-align: center;
+}
 
-    .navy-line {
-        width: 60px;
-        height: 1px;
-        margin: 60px auto 0;
-        border-bottom: 2px solid #3798d3;
-      }
+.b-signup, b-signup-now {
+  margin-top: 20px;
+  $border-radius-large: 1px;
+}
 
-    .video h2 {
-      margin-top: 10px;
-      font-size: 60px;
-      font-weight: 200;
-      color: $advalori-dark-gray;
-    }
-    .video p {
-      color: $advalori-dark-gray;
-      font-size: 13px;
-    }
+.navy-line {
+  width: 60px;
+  height: 1px;
+  margin: 60px auto 0;
+  border-bottom: 2px solid #3798d3;
+}
 
-    #blue-wrapper {
-      background-color: $advalori-blue;
-      color: white;
-      height: 20vh;
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
+.video h2 {
+  margin-top: 10px;
+  font-size: 60px;
+  font-weight: 200;
+  color: $advalori-dark-gray;
+}
+.video p {
+  color: $advalori-dark-gray;
+  font-size: 13px;
+}
 
-    span.navy {
-      color: $advalori-blue;
-    }
+#process {
+  height: 100vh;
+}
 
-    .features-icon {
-      color: $advalori-blue;
-      font-size: 40px;
-    }
+#blue-wrapper {
+  background-color: $advalori-blue;
+  color: white;
+  height: 20vh;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
-    .fa {
-      display: inline-block;
-      font: normal normal normal 14px/1 FontAwesome;
-      font-size: 48px;
-      text-rendering: auto;
-    }
+span.navy {
+  color: $advalori-blue;
+}
 
-    .m-t-lg {
-      margin-top: 20px;
-    }
+.features-icon {
+  color: $advalori-blue;
+  font-size: 40px;
+}
 
-    #team {
-      background-color: $advalori-lighter-gray;
-      margin-top: 60px;
-    }
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 48px;
+  text-rendering: auto;
+}
 
-    .img-circle {
-      border-radius: 50%;
-    }
+.m-t-lg {
+  margin-top: 20px;
+}
 
-    .img-responsive {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
+#team {
+  background-color: $advalori-lighter-gray;
+  margin-top: 60px;
+}
 
-    img {
-      vertical-align: middle;
-      border: 0;
-    }
+.img-circle {
+  border-radius: 50%;
+}
 
-    #contact {
-      background-color: $advalori-lighter-gray;
-    }
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
-    #partners {
-      margin-top: 60px;
-    }
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+#contact {
+  background-color: $advalori-lighter-gray;
+}
+
+#partners {
+  margin-top: 60px;
+}
