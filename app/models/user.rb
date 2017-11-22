@@ -6,5 +6,4 @@ class User < ApplicationRecord
 
   belongs_to :investor
   belongs_to :seller
-  has_many :expenses, foreign_key: :seller_id
 end

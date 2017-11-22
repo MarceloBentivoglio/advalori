@@ -40,10 +40,10 @@ class ExpensesController < ApplicationController
   end
 
   def expense
-    expenses.find(params[:id])
+    seller.expenses.find(params[:id])
   end
 
   def expenses
-    current_user.expenses
+    current_user.seller.expenses
   end
 end
