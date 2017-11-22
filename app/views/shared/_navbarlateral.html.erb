@@ -14,6 +14,16 @@
        <% end %>
      </li>
 
+      <li>
+        <%= link_to user_invoice_payers_path do %>
+        <i class="fa fa-handshake-o"></i> <%= t(".profile", default: "Customers") %>
+        <% end %>
+      </li>
+         <li>
+        <%= link_to user_expenses_path do %>
+        <i class="fa fa-list-alt"></i> <%= t(".profile", default: "Expenses") %>
+        <% end %>
+      </li>
      <li>
       <%= link_to edit_user_registration_path do %>
       <i class="fa fa-user-circle"></i> <%= t(".profile", default: "My Profile") %>
@@ -25,13 +35,6 @@
       <i class="fa fa-money"></i> <%= t(".profile", default: "Invoices") %>
       <% end %>
     </li>
-
-    <li>
-      <%= link_to user_invoice_payers_path do %>
-      <i class="fa fa-users"></i> <%= t(".profile", default: "Customers") %>
-      <% end %>
-    </li>
-
   </ul>
 </div>
 </nav>
