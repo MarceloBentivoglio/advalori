@@ -5,6 +5,7 @@ class SellersController < ApplicationController
   end
 
   def new
+    @user = current_user
     @seller = Seller.new
   end
 
@@ -14,7 +15,7 @@ class SellersController < ApplicationController
     if @seller.save
       current_user.seller = @seller
       current_user.save
-      redirect_to user_path(current_user)
+      redirect_to user_path
     else
       render :new
     end
