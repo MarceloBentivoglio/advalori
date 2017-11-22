@@ -4,6 +4,8 @@ class Invoice < ApplicationRecord
   has_many :installments
   has_many :orders
 
+  accepts_nested_attributes_for :installments
+
   has_attachment :xml_file, accept: [:xml]
 
   validates :number, :total_value, :seller_id, :invoice_payer_id, presence: true
