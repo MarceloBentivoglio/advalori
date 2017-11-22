@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120185736) do
+ActiveRecord::Schema.define(version: 20171121165233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string   "attachinariable_type"
+    t.integer  "attachinariable_id"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+  end
 
   create_table "expenses", force: :cascade do |t|
     t.string   "supplier"
@@ -55,7 +70,7 @@ ActiveRecord::Schema.define(version: 20171120185736) do
     t.string   "cnpj"
     t.string   "name"
     t.string   "address"
-    t.string   "adress_number"
+    t.string   "address_number"
     t.string   "address_complement"
     t.string   "phone_number"
     t.string   "state"
@@ -70,9 +85,13 @@ ActiveRecord::Schema.define(version: 20171120185736) do
     t.string   "number"
     t.float    "total_value"
     t.integer  "seller_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "invoice_payer_id"
+    t.string   "xml_file_file_name"
+    t.string   "xml_file_content_type"
+    t.integer  "xml_file_file_size"
+    t.datetime "xml_file_updated_at"
     t.index ["invoice_payer_id"], name: "index_invoices_on_invoice_payer_id", using: :btree
     t.index ["seller_id"], name: "index_invoices_on_seller_id", using: :btree
   end

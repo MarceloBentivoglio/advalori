@@ -17,7 +17,6 @@ body {
 .services {
   padding-top: 60px;
 }
-
 .row {
     margin-right: -15px;
     margin-left: -15px;
@@ -29,11 +28,11 @@ body {
     font-weight: 300;
     text-transform: uppercase;
     text-align: center;
-    color: #87888A;
-}
+    color: $advalori-dark-gray;
+  }
   .services p {
     text-align: center;
-    color: #87888A;
+    color: $advalori-dark-gray;
     font-size: 13px;
   }
 
@@ -58,4 +57,3 @@ body {
     color: $advalori-dark-gray;
     font-size: 13px;
   }
-

@@ -1,5 +1,9 @@
 class SellersController < ApplicationController
 
+  def index
+    @sellers = Seller.all
+  end
+
   def new
     @seller = Seller.new
   end
@@ -8,7 +12,7 @@ class SellersController < ApplicationController
     @seller = Seller.new(seller_params)
 
     if @seller.save
-      current_user.seller_id = @seller
+      current_user.seller = @seller
       current_user.save
       redirect_to user_path(current_user)
     else

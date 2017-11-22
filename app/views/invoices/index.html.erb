@@ -1,0 +1,37 @@
+    <div class="container">
+      <div class="col-lg-12">
+        <h5>Open Invoices</h5>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Payer</th>
+            <th>Reference Number</th>
+            <th>Installment</th>
+            <th>Invoice Amount</th>
+            <th>Due date</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @invoices.each do |invoice| %>
+        <tr class="tr-highlight-overdue">
+          <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
+          <td><%= invoice.number  %></td>
+          <td><%= invoice.installments.count  %></td>
+          <td><%= invoice.total_value %></td>
+          <td><%= Seller.find_by(id: invoice.seller_id).name %></td>
+        </tr>
+          <% invoice.installments.each do |installment| %>
+            <tr>
+              <td><%= installment.number  %></td>
+              <td><%= installment.value  %></td>
+              <td><%= installment.due_date  %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+

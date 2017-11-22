@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-lg-12">
+    <h5>Open Invoices</h5>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>CNPJ</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @sellers.each do |seller| %>
+    <tr class="tr-highlight-overdue">
+      <td><%= seller.cnpj %></td>
+      <td><%= seller.name %></td>
+
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>

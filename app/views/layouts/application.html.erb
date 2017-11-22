@@ -6,12 +6,14 @@
     <title>TODO</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+    <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= javascript_include_tag 'application' %>
+    <%= yield(:js)  %>
+    <%= cloudinary_js_config %>
   </body>
 </html>

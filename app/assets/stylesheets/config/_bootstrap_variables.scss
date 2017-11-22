@@ -6,7 +6,7 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
+$body-bg:                 $lighter-gray;
 $font-size-base: 18px;
 
 // Colors
@@ -16,10 +16,17 @@ $brand-success:   $green;
 $brand-info:      $yellow;
 $brand-danger:    $red;
 $brand-warning:   $orange;
+$advalori-lighter-gray: $lighter-gray;
+$advalori-light-gray: $light-gray;
+$advalori-medium-gray: $medium-gray;
+$advalori-dark-gray: $dark-gray;
+$advalori-blue: $blue;
+
+
 
 // Buttons & inputs' radius
-$border-radius-base:  2px;
-$border-radius-large: 2px;
-$border-radius-small: 2px;
+$border-radius-base:  1px;
+$border-radius-large: 1px;
+$border-radius-small: 1px;
 
 // Override other variables below!
