@@ -1,11 +1,11 @@
 class ExpensesController < ApplicationController
 
   def index
-    @expense = Expense.all
+    @expense = expenses
   end
 
   def show
-    @expense = Expense.find(params[:id])
+    @expense = expense
   end
 
   def new
@@ -26,6 +26,8 @@ class ExpensesController < ApplicationController
 
 
   def update
+    if expense.update(expense_params)
+    end
   end
 
   def destroy
@@ -35,5 +37,13 @@ class ExpensesController < ApplicationController
 
   def expense_params
     params.require(:expense).permit(:supplier, :value, :due_date, :seller_id)
+  end
+
+  def expense
+    expenses.find(params[:id])
+  end
+
+  def expenses
+    current_user.expenses
   end
 end
