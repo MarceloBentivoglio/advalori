@@ -1,4 +1,8 @@
 class InvoicePayersController < ApplicationController
+  def index
+    @invoice_payers = InvoicePayer.all
+  end
+
   def new
     @invoice_payer = InvoicePayer.new
   end

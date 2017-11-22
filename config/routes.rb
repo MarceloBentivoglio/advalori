@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resource :user, only: [:show]
   resources :sellers
   resources :investors
-  resources :invoice_payers, only: [:new, :create, :destroy, :show]
+  resources :invoice_payers, only: [:new, :create, :destroy, :show, :index]
 
   resources :invoices, only: [:new, :create, :index]
   resources :expenses, only: [:new, :create, :update, :destroy, :index]
