@@ -4,25 +4,15 @@
       <ul class="nav" id="side-menu">
 
         <li class="nav-header">
-          <%= cl_image_tag("Advalori/Logomakr_6yM3k1.png", width: 180) %>
-        </li>
-       <li>
-         <%= link_to user_path do %>
-         <i class="fa fa-briefcase"></i> <%= t(".profile", default: "Overview") %>
-         <% end %>
-       </li>
-
-       <li>
-        <%= link_to edit_user_registration_path do %>
-        <i class="fa fa-user-circle"></i> <%= t(".profile", default: "My Profile") %>
+          <%= link_to root_path do %>
+          <%= cl_image_tag ("http://res.cloudinary.com/mbentivoglio/image/upload/v1511372762/Advalori/Logomakr_6yM3k1.png"), width: 180%>
         <% end %>
       </li>
-
       <li>
-        <%= link_to user_invoices_path do %>
-        <i class="fa fa-money"></i> <%= t(".profile", default: "Invoices") %>
-        <% end %>
-      </li>
+       <%= link_to user_path do %>
+       <i class="fa fa-briefcase"></i> <%= t(".profile", default: "Overview") %>
+       <% end %>
+     </li>
 
       <li>
         <%= link_to user_invoice_payers_path do %>
@@ -34,7 +24,17 @@
         <i class="fa fa-list-alt"></i> <%= t(".profile", default: "Expenses") %>
         <% end %>
       </li>
+     <li>
+      <%= link_to edit_user_registration_path do %>
+      <i class="fa fa-user-circle"></i> <%= t(".profile", default: "My Profile") %>
+      <% end %>
+    </li>
 
-    </ul>
-  </div>
+    <li>
+      <%= link_to user_invoices_path do %>
+      <i class="fa fa-money"></i> <%= t(".profile", default: "Invoices") %>
+      <% end %>
+    </li>
+  </ul>
+</div>
 </nav>
