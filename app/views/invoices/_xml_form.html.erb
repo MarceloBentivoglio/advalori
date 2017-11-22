@@ -1,14 +1,17 @@
-<%= form_for @invoice do |f| %>
+<%= simple_form_for @invoice, url: user_invoices_path do |f| %>
+  <%= f.error_notification %>
 
-  <div class="control-group">
-    <%= f.label :xml_file, class: 'control-label' %>
-    <div class="controls">
-      <%= f.file_field :xml_file %>
+  <div class="form-inputs">
+    <div class="control-group">
+      <%= f.label :xml_file, class: 'control-label' %>
+        <div class="controls">
+          <%= f.file_field :xml_file %>
+        </div>
+    </div>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), new_user_invoice_payer_path, :class => 'btn' %>
     </div>
   </div>
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                invoices_path, :class => 'btn' %>
-  </div>
+
 <% end %>
