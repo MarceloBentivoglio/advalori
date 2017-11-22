@@ -20,8 +20,14 @@
           <td><%= invoice.installments.count  %></td>
           <td><%= invoice.total_value %></td>
           <td><%= Seller.find_by(id: invoice.seller_id).name %></td>
-
         </tr>
+          <% invoice.installments.each do |installment| %>
+            <tr>
+              <td><%= installment.number  %></td>
+              <td><%= installment.value  %></td>
+              <td><%= installment.due_date  %></td>
+            </tr>
+          <% end %>
         <% end %>
       </tbody>
       </table>
