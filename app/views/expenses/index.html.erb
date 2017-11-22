@@ -1,3 +1,4 @@
+<%= render 'shared/navbarlateral' %>
 <div class="container">
   <table class="table">
     <%= link_to "Add Expense", new_user_expense_path, class: "btn btn-primary btn-md pull-right" %>
@@ -31,6 +32,10 @@
 
   <div class="chart">
     <%= line_chart expenses_chart_path %>
+  </div>
+
+  <div class="chart">
+    <%= line_chart calc_expenses_chart_path %>
   </div>
 
 </div>

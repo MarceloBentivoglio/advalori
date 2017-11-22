@@ -1,7 +1,8 @@
-<div class="banner"style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/mbentivoglio/image/upload/v1511205301/fundo_bhwql4.png');">
+<%= render 'shared/navbar' %>
+<div class="banner"style="background-image: linear-gradient(135deg, rgba(116,168,195, 0.5) 0%, rgba(131,99,161, 0.5) 100%), url('http://res.cloudinary.com/mbentivoglio/image/upload/v1511205301/fundo_bhwql4.png');">
   <div class="banner-content">
-    <h1><strong>IMPROVE YOUR CASH BALANCE IN A SMART WAY</strong></h1>
-    <p><strong>AN EASY-TO-USE PLATFORM FOR INVOICE FINANCE</strong></p>
+    <h1>IMPROVE YOUR CASH BALANCE IN A SMART WAY</h1>
+    <p>AN EASY-TO-USE PLATFORM FOR INVOICE FINANCE</p>
 
   <!-- Banner -->
   <!--div class="banner"style="background-image: linear-gradient(135deg, rgba(131,99,161, 1) 0%, rgba(116,168,195, 1) 100%), url('http://res.cloudinary.com/mbentivoglio/image/upload/v1511205301/fundo_bhwql4.png');">
@@ -14,7 +15,7 @@
 
   <!-- Factoring Services -->
   <section id="factoring-wrapper" class="container services">
-    <div class="row">
+    <div class="row text-center">
       <div class="col-xs-12 col-sm-4">
         <h4>FLEXIBLE</h4>
         <p>Choose what invoice to sell, whenever you want to sell it, and to what price. Customize your short-term financing according to your business’s needs.</p>
@@ -23,7 +24,7 @@
         <h4>TRANSPARENT</h4>
         <p>Let multiple investors bid for your invoices to get the best deal. Compared to traditional factoring we do not charge any hidden financial fees!</p>
         <div class="text-center">
-            <a class="btn btn-primary btn-md b-signup">Sign Up</a>
+            <a class="btn btn-primary btn-md b-signup">Sign Up Now</a>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
@@ -83,7 +84,7 @@
         </div>
       </div>
       <div class="col-md-6 text-center  wow zoomIn animated" style="visibility: visible; animation-name: zoomIn;">
-        <img src="assets/perspective.png" alt="dashboard" class="img-responsive">
+        <img src="https://thesispieper.herokuapp.com/assets/perspective.png" alt="dashboard" class="img-responsive">
       </div>
         <div class="col-md-3 text-center wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
           <div>
@@ -100,8 +101,9 @@
       </div>
       <div class="row">
         <div class="col-md-12 text-center">
-          <a class="btn btn-primary btn-xs m-t-sm" href="/en/accounts/sign_up">Sign Up Now</a>
+          <a class="btn btn-primary btn-md b-signup-now">Sign Up Now</a>
           <div class="navy-line"></div>
+          <h4>An easy-to-use system that is accessible directly through your browser</h4>
         </div>
       </div>
   </section>
@@ -112,12 +114,13 @@
     <div class="container">
       <div class="row m-b-lg">
         <div class="col-lg-12 text-center">
+          <div class="navy-line"></div>
           <h3>Our Team</h3>
           <p>We are a driven team that is pushing its limits to disrupt the factoring market with our passion for technology.</p>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-2 wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
+        <div class="col-sm-3 wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
           <div class="team-member">
             <img src="assets/avatar3.jpg" class="img-responsive img-circle" alt="">
             <h4><span class="navy">Philip</span> Kornmann</h4>
@@ -132,7 +135,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-3">
           <div class="team-member wow zoomIn animated" style="visibility: visible; animation-name: zoomIn;">
             <img src="assets/avatar1.jpg" class="img-responsive img-circle" alt="">
             <h4><span class="navy">Phil</span> Lojacono</h4>
@@ -147,7 +150,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-sm-4 wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+        <div class="col-sm-3 wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
           <div class="team-member">
             <img src="assets/avatar2.jpg" class="img-responsive img-circle" alt="">
             <h4><span class="navy">Stijn</span> Pieper</h4>
@@ -162,11 +165,11 @@
             </ul>
           </div>
         </div>
-        <div class="col-sm-2 wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+        <div class="col-sm-3 wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
           <div class="team-member">
-            <img src="assets/avatar2.jpg" class="img-responsive img-circle" alt="">
-            <h4><span class="navy">Stijn</span> Pieper</h4>
-              <p>CTO - Experience in Web-Development &amp; IT Engineering (ING bank, The Dutch Central Bank, Google)</p>
+            <img src="https://avatars3.githubusercontent.com/u/23193973?v=4" class="img-responsive img-circle" alt="">
+            <h4><span class="navy">Pedro</span> Souza</h4>
+              <p>Full Stack Developer - Ruby on Rails &amp; (Citigroup, Bank of New York, Equinix Datacenters)</p>
             <ul class="list-inline social-icon">
               <li><a href="mailto:stijn@advanon.com" target="_blank"><i class="fa fa-envelope"></i></a>
               </li>
@@ -200,13 +203,11 @@
         <a href="https://www.swisscom.ch/de/business/start-up/venturing-und-coworking/portfolio.html" target="_blank"></a>
       </div>
       <div class="col-sm-4 spon3 wow fadeInRight text-center animated" style="visibility: visible; animation-name: fadeInRight;">
-        <a href="http://www.venturekick.ch/index.cfm?page=119858&amp;profil_id=7944" target="_blank"></a>
+        <a href="#" target="_blank">
+        <img src="http://atecorp.com.br/images/logo_escura.png" alt="">
+        </a>
       </div>
     </div>
-  </div>
-
-  <div class="container text-center">
-      <a class="btn btn-primary btn-md b-signup">Sign Up</a>
   </div>
 </section>
 

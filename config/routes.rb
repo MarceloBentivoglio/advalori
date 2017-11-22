@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: :registrations }
+
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resource :user, only: [:show] do
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
 
 
   get "expenses_chart", to: 'charts#expenses_chart'
+  get "calc_expenses_chart", to: 'charts#calc_expenses_chart'
 
   mount Attachinary::Engine => "/attachinary"
 end
