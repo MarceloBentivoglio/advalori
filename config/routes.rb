@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
 
   get "expenses_chart", to: 'charts#expenses_chart'
+  get "calc_expenses_chart", to: 'charts#calc_expenses_chart'
 
   mount Attachinary::Engine => "/attachinary"
 end
