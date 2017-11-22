@@ -12,7 +12,7 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.create(invoice_params)
     @invoice.save
 
-    redirect_to user_path(current_user)
+    redirect_to user_path
   end
 
   private

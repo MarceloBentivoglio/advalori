@@ -10,7 +10,7 @@ class InvoicePayersController < ApplicationController
   def create
     @invoice_payer = InvoicePayer.new(invoice_payer_params)
     if @invoice_payer.save
-      redirect_to user_path(current_user)
+      redirect_to user_path
     else
       render :new
     end
