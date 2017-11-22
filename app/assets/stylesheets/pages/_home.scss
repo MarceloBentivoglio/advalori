@@ -1,4 +1,13 @@
 // Specific CSS for your home-page
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: $advalori-medium-gray;
+  background-color: #fff;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -43,10 +52,10 @@
     margin-top: 10px;
     font-size: 60px;
     font-weight: 200;
-    color: $gray;
-
+    color: $advalori-dark-gray;
   }
   .video p {
-    color: $red;
+    color: $advalori-dark-gray;
     font-size: 13px;
-}
+  }
+
