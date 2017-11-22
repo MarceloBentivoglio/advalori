@@ -1,4 +1,13 @@
 // Specific CSS for your home-page
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: $advalori-medium-gray;
+  background-color: #fff;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -9,38 +18,42 @@
   padding-top: 60px;
 }
 .row {
-  margin-right: -15px;
-  margin-left: -15px;
-}
-.services h2 {
-  color: $advalori-dark-gray;
-  font-size: 20px;
-  letter-spacing: -1px;
-  font-weight: 300;
-  text-transform: uppercase;
-  text-align: center;
-}
-.services p {
-  text-align: center;
-  color: $advalori-dark-gray;
-  font-size: 13px;
-}
-.b-signup {
-  margin-top: 10px;
-}
-.navy-line {
-  width: 60px;
-  height: 1px;
-  margin: 60px auto 0;
-  border-bottom: 2px solid #3798d3;
-}
-.video h2 {
-  margin-top: 10px;
-  font-size: 60px;
-  font-weight: 200;
-  color: $advalori-dark-gray;
-}
-.video p {
-  color: $advalori-dark-gray;
-  font-size: 13px;
-}
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .services h2 {
+    font-size: 20px;
+    letter-spacing: -1px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    color: $advalori-dark-gray;
+  }
+  .services p {
+    text-align: center;
+    color: $advalori-dark-gray;
+    font-size: 13px;
+  }
+
+  .b-signup {
+    margin-top: 10px;
+  }
+
+  .navy-line {
+      width: 60px;
+      height: 1px;
+      margin: 60px auto 0;
+      border-bottom: 2px solid #3798d3;
+    }
+
+  .video h2 {
+    margin-top: 10px;
+    font-size: 60px;
+    font-weight: 200;
+    color: $advalori-dark-gray;
+  }
+  .video p {
+    color: $advalori-dark-gray;
+    font-size: 13px;
+  }
