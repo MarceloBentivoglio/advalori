@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Dashboard", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", user_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Invoices", invoices_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Expenses", expenses_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
