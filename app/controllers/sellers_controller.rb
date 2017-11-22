@@ -1,5 +1,9 @@
 class SellersController < ApplicationController
 
+  def index
+    @sellers = Seller.all
+  end
+
   def new
     @seller = Seller.new
   end

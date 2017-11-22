@@ -1,6 +1,7 @@
 class InvoicesController < ApplicationController
   def index
     @invoices = Invoice.all
+    @installments = Installment.all
   end
 
   def new

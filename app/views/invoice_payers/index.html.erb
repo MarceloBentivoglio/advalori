@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-lg-12">
+    <h5>Invoice Payers</h5>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>CNPJ</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @invoice_payers.each do |invoice_payer| %>
+    <tr class="tr-highlight-overdue">
+      <td><%= invoice_payer.cnpj %></td>
+      <td><%= invoice_payer.name %></td>
+
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>
