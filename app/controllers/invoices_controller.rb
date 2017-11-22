@@ -6,6 +6,7 @@ class InvoicesController < ApplicationController
 
   def new
     @invoice = Invoice.new
+    redirect_to user_path
   end
 
   def create
