@@ -1,15 +1,14 @@
-.fa {
+.fa-adjusted {
   font-size: 18px !important;
-  vertical-align: middle;
+  vertical-align: baseline;
   float: right;
 }
-
 
 .container-navbar
 {
     width:800px;
     overflow:hidden;
-    display:inline-block;
+    // display:inline-block;
 }
 .side-bar
 {
@@ -22,6 +21,15 @@
     transition: margin-left 0.5s;
 }
 
+.side-bar a {
+
+  font-size: 16px;
+  font-weight: lighter;
+  line-height: 30px;
+  vertical-align: middle;
+
+}
+
 .side-bar ul
 {
     list-style:none;
@@ -31,7 +39,6 @@
 
 .side-bar ul li.menu-head
 {
-    font-family: 'Lato', sans-serif;
     padding:20px;
 }
 
@@ -88,7 +95,6 @@
     margin-top: -10px;
     margin-left: 180px;
 }
-
 
 .content
 {
