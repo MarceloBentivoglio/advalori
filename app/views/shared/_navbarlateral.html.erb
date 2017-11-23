@@ -1,40 +1,53 @@
-<div id="wrapper-dashboard">
-  <nav class="navbar-default navbar-static-side">
-    <div class="sidebar-colapse">
-      <ul class="nav" id="side-menu">
+<div class="container">
+  <div class="row">
+    <div class="wrapper">
+      <div class="side-bar">
+        <ul class="list-group">
+          <li class="menu-head">
+            <%= link_to root_path do %>
+            <%= cl_image_tag ("http://res.cloudinary.com/mbentivoglio/image/upload/v1511372762/Advalori/Logomakr_6yM3k1.png"), width: 120 %>
+            <% end %>
+            <a href="#" class="push_menu">
+              <span class="glyphicon glyphicon-align-justify pull-right"></span>
+            </a>
+          </li>
+          <div class="menu">
 
-        <li class="nav-header">
-          <%= link_to root_path do %>
-          <%= cl_image_tag ("http://res.cloudinary.com/mbentivoglio/image/upload/v1511372762/Advalori/Logomakr_6yM3k1.png"), width: 180%>
-        <% end %>
-      </li>
-      <li>
-       <%= link_to user_path do %>
-       <i class="fa fa-briefcase"></i> <%= t(".profile", default: "Overview") %>
-       <% end %>
-     </li>
+            <li>
+             <%= link_to user_path do %>
+             <%= t(".profile", default: "Dashboard") %>
+             <i class="fa fa-dashboard"></i>
+             <% end %>
+           </li>
 
-      <li>
-        <%= link_to user_invoice_payers_path do %>
-        <i class="fa fa-handshake-o"></i> <%= t(".profile", default: "Customers") %>
-        <% end %>
-      </li>
-         <li>
-        <%= link_to user_expenses_path do %>
-        <i class="fa fa-list-alt"></i> <%= t(".profile", default: "Expenses") %>
-        <% end %>
-      </li>
-     <li>
-      <%= link_to edit_user_registration_path do %>
-      <i class="fa fa-user-circle"></i> <%= t(".profile", default: "My Profile") %>
-      <% end %>
-    </li>
+           <li>
+            <%= link_to user_invoice_payers_path do %>
+            <%= t(".profile", default: "Customers") %>
+            <i class="fa fa-handshake-o fa-lg fa-fw"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to user_expenses_path do %>
+            <%= t(".profile", default: "Expenses") %>
+            <i class="fa fa-list-alt fa-lg fa-fw"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to edit_user_registration_path do %>
+            <%= t(".profile", default: "My Profile") %>
+            <i class="fa fa-user-circle fa-lg fa-fw"></i>
+            <% end %>
+          </li>
 
-    <li>
-      <%= link_to user_invoices_path do %>
-      <i class="fa fa-money"></i> <%= t(".profile", default: "Invoices") %>
-      <% end %>
-    </li>
-  </ul>
+          <li>
+            <%= link_to user_invoices_path do %>
+            <%= t(".profile", default: "Invoices") %>
+            <i class="fa fa-money fa-fw"></i>
+            <% end %>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
 </div>
-</nav>
+</div>
