@@ -17,7 +17,7 @@ class ExpensesController < ApplicationController
     @expense.seller = current_user.seller
 
     if @expense.save
-      redirect_to expenses_path
+      redirect_to user_expenses_path
     else
       render :new
     end

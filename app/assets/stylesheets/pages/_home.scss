@@ -8,6 +8,11 @@ body {
   background-color: #fff;
 }
 
+
+p {
+  font-weight: 300;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -16,14 +21,14 @@ body {
 }
 
 .services {
-  padding-top: 300px;
+  padding-top: 30px;
 
   p {
     text-align: center;
     font-weight: 100;
-
   }
 }
+
 
 .row {
   margin-right: -15px;
@@ -36,12 +41,15 @@ body {
   margin-bottom: 20px;
   $border-radius-large: 1px;
 }
+.services p {
+  text-align: center;
+}
 
 .navy-line {
   width: 60px;
   height: 1px;
   margin: 60px auto 0;
-  border-bottom: 2px solid #3798d3;
+  border-bottom: 2px solid $advalori-blue;
 }
 
 .video h2 {
@@ -53,6 +61,10 @@ body {
 .video p {
   color: $advalori-dark-gray;
   font-size: 13px;
+}
+
+#process {
+  height: 70vh;
 }
 
 #blue-wrapper {
@@ -84,7 +96,6 @@ span.navy {
   margin-top: 20px;
 }
 
-
 #team {
   background-color: $advalori-lighter-gray;
   margin-top: 60px;
@@ -103,15 +114,13 @@ span.navy {
   margin: 0 0 10px;
 }
 
-.team-member {
-  text-align: center;
-}
-
 .team-member img {
   margin: auto;
   height: 150px;
   width: auto;
+  text-align: center;
 }
+
 
 .img-circle {
   border-radius: 50%;
@@ -178,7 +187,6 @@ a {
 }
 
 
-
 #partners {
   margin-top: 60px;
 }
@@ -200,9 +208,6 @@ a {
 
 #contact {
   background-color: $advalori-lighter-gray;
-}
-
-.contact {
   margin-top: 60px;
   background-image: url(word_map.png);
   background-position: 50% 50%;
@@ -215,11 +220,4 @@ a {
   margin-right: auto;
   margin-left: auto;
 }
-
-
-
-
-
-
-
 

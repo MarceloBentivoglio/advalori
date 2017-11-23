@@ -1,6 +1,6 @@
 class InvoicesController < ApplicationController
   def index
-    @invoices = Invoice.all
+    @invoices = invoices
     @installments = Installment.all
   end
 
@@ -9,15 +9,22 @@ class InvoicesController < ApplicationController
   end
 
   def create
-    @invoice = Invoice.create(invoice_params)
-    @invoice.save
+    if params[:invoice][:xml_file].present?
+      @invoice = Invoice.from_file(params[:invoice][:xml_file])
+    else
+      @invoice = Invoice.new(invoice_params)
+    end
 
-    redirect_to user_path(current_user)
+    redirect_to user_path
   end
 
   private
 
   def invoice_params
-    params.require(:invoice).permit(:xml_file)
+    params.require(:invoice).permit()
+  end
+
+  def invoices
+    current_user.seller.invoices
   end
 end
