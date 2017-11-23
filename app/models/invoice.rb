@@ -4,33 +4,35 @@ class Invoice < ApplicationRecord
   has_many :installments
   has_many :orders
 
+  accepts_nested_attributes_for :installments
+
+  has_attachment :xml_file, accept: [:xml]
+
   validates :number, :total_value, :seller_id, :invoice_payer_id, presence: true
 
-  has_attached_file :xml_file
-  do_not_validate_attachment_file_type :xml_file
-
-  after_create :parse_file
-
-  private
-
-  def parse_file
+  def self.from_file(file)
     # tempfile = xml_file.queued_for_write[:original]
-    doc = Nokogiri::XML(Paperclip.io_adapters.for(self.xml_file).read)
-    self.number = doc.search('fat nFat').text.strip
-    self.total_value = doc.search('fat vLiq').text.to_f
-    self.seller = Seller.find_by(cnpj: doc.search('emit CNPJ').text.strip)
-    self.invoice_payer = InvoicePayer.find_by(cnpj: doc.search('dest CNPJ').text.strip)
-    self.save
+    doc = Nokogiri::XML(file.read)
+    file.rewind # Needed since we still need to upload file
+
+    invoice = Invoice.new(xml_file: file)
+    invoice.number = doc.search('fat nFat').text.strip
+    invoice.total_value = doc.search('fat vLiq').text.to_f
+    invoice.seller = Seller.find_by(cnpj: doc.search('emit CNPJ').text.strip)
+    invoice.invoice_payer = InvoicePayer.find_by(cnpj: doc.search('dest CNPJ').text.strip)
+    invoice.save!
 
     dups = doc.search('dup')
     dups.each do |dup|
       installment = Installment.new
-      installment.invoice = self
+      installment.invoice = invoice
       installment.number = dup.search('nDup').text.strip
       installment.value = dup.search('vDup').text.to_f
       installment.due_date = dup.search('dVenc').text.strip
-      installment.save
+      installment.save!
     end
+
+    return invoice
   end
 end
 

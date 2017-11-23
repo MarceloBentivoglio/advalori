@@ -1,2 +1,36 @@
 <h1>Testando!!!!1,2,3...</h1>
 <%= render 'xml_form' %>
+
+<div class="row">
+  <div class="col col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+
+    <h3>Invoice Infos</h3>
+
+    <%= simple_form_for @invoice, url: user_sellers_path do |f| %>
+      <%= f.input :number %>
+      <%= f.input :total_value %>
+      <%= f.input :seller_id %>
+      <%= f.input :invoice_payer_id %>
+      <%= f.submit "Save Infos", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+
+    <h3>Installments Infos</h3>
+
+    <%= simple_form_for @invoice, url: user_sellers_path do |f| %>
+      <%= f.input :number %>
+      <%= f.input :total_value %>
+      <%= f.input :seller_id %>
+      <%= f.input :invoice_payer_id %>
+      <%= f.submit "Save Infos", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+
+</div>
