@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   private
 
   def welcome_message
-    flash[:notice] = "Please complete your profile <a href=#{new_user_seller_path}>
-    here</a>".html_safe
+    flash[:notice] = "You need to complete your financial information before
+    being able to upload invoices. Please head over to the
+    <a href=#{new_user_seller_path}> Financial Information.</a>".html_safe
   end
 end
 
