@@ -6,6 +6,7 @@ class InvoicesController < ApplicationController
 
   def new
     @invoice = Invoice.new
+    @invoice.installments.build
   end
 
   def create
@@ -13,6 +14,8 @@ class InvoicesController < ApplicationController
       @invoice = Invoice.from_file(params[:invoice][:xml_file])
     else
       @invoice = Invoice.new(invoice_params)
+      @invoice.seller = current_user.seller
+      @invoice.save!
     end
 
     redirect_to user_path
@@ -21,7 +24,7 @@ class InvoicesController < ApplicationController
   private
 
   def invoice_params
-    params.require(:invoice).permit()
+    params.require(:invoice).permit(:number, :total_value, installments_attributes: [:id, :number, :value, :due_date, :_destroy])
   end
 
   def invoices
