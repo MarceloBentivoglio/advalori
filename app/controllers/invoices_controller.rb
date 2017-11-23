@@ -12,6 +12,11 @@ class InvoicesController < ApplicationController
   def create
     if params[:invoice][:xml_file].present?
       @invoice = Invoice.from_file(params[:invoice][:xml_file])
+
+      if @invoice.nil?
+        redirect_to new_user_invoice_payer_path
+        return
+      end
     else
       @invoice = Invoice.new(invoice_params)
       @invoice.invoice_payer = invoice_payer

@@ -11,6 +11,9 @@ class Invoice < ApplicationRecord
   validates :number, :total_value, :seller_id, :invoice_payer_id, presence: true
 
   def self.from_file(file)
+
+
+
     # tempfile = xml_file.queued_for_write[:original]
     doc = Nokogiri::XML(file.read)
     file.rewind # Needed since we still need to upload file
@@ -20,6 +23,9 @@ class Invoice < ApplicationRecord
     invoice.total_value = doc.search('fat vLiq').text.to_f
     invoice.seller = Seller.find_by(cnpj: doc.search('emit CNPJ').text.strip)
     invoice.invoice_payer = InvoicePayer.find_by(cnpj: doc.search('dest CNPJ').text.strip)
+
+    return nil if invoice.invoice_payer.nil?
+
     invoice.save!
 
     dups = doc.search('dup')
