@@ -19,6 +19,8 @@ gem 'uglifier'
 gem 'chartkick', '~> 2.2.0'
 gem "groupdate"
 
+gem "cocoon"
+
 gem "simple_form"
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'

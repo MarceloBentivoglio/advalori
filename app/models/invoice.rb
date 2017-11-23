@@ -1,10 +1,10 @@
 class Invoice < ApplicationRecord
   belongs_to :seller
   belongs_to :invoice_payer
-  has_many :installments
+  has_many :installments, inverse_of: :invoice
   has_many :orders
 
-  accepts_nested_attributes_for :installments
+  accepts_nested_attributes_for :installments, reject_if: :all_blank, allow_destroy: true
 
   has_attachment :xml_file, accept: [:xml]
 

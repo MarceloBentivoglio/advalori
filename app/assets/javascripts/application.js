@@ -7,4 +7,7 @@
 //= require attachinary
 //= require Chart.bundle
 //= require chartkick
+
+//= require cocoon
+
 //= require_tree .
