@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resource :user, only: [:show] do
-    resources :sellers, only: [:new, :create, :update]
+    resources :sellers, only: [:new, :create, :update, :show]
     resources :investors, only: [:new, :create, :update]
     resources :invoice_payers, only: [:new, :create, :destroy, :show, :index]
     resources :invoices, only: [:new, :create, :index]
