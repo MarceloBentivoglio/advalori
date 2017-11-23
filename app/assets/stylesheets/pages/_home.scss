@@ -4,9 +4,10 @@ body {
   font-family: $font-family-sans-serif;
   $font-size-base: 18px;
   line-height: 1.42857143;
-  color: $advalori-dark-gray;
+  color: $advalori-medium-gray;
   background-color: #fff;
 }
+
 
 p {
   font-weight: 300;
@@ -21,6 +22,11 @@ p {
 
 .services {
   padding-top: 30px;
+
+  p {
+    text-align: center;
+    font-weight: 100;
+  }
 }
 
 .row {
@@ -28,20 +34,22 @@ p {
   margin-left: -15px;
 }
 
-.services p {
-  text-align: center;
-}
 
 .b-signup, b-signup-now {
   margin-top: 20px;
+  margin-bottom: 20px;
   $border-radius-large: 1px;
+}
+
+.services p {
+  text-align: center;
 }
 
 .navy-line {
   width: 60px;
   height: 1px;
   margin: 60px auto 0;
-  border-bottom: 2px solid #3798d3;
+  border-bottom: 2px solid $advalori-blue;
 }
 
 .video h2 {
@@ -50,13 +58,14 @@ p {
   font-weight: 200;
   color: $advalori-dark-gray;
 }
+
 .video p {
   color: $advalori-dark-gray;
   font-size: 13px;
 }
 
 #process {
-  height: 100vh;
+  height: 70vh;
 }
 
 #blue-wrapper {
@@ -79,17 +88,38 @@ span.navy {
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
-  font-size: 48px;
+  font-size: inherit;
   text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
-.m-t-lg {
+.bottom-icon {
   margin-top: 20px;
 }
 
 #team {
   background-color: $advalori-lighter-gray;
   margin-top: 60px;
+}
+
+.team h4 {
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.team p {
+  color: $advalori-medium-gray;
+  font-size: 13px;
+  margin: 0 0 10px;
+}
+
+.team-member img {
+  margin: auto;
+  height: 150px;
+  width: auto;
+  text-align: center;
 }
 
 .img-circle {
@@ -102,15 +132,76 @@ span.navy {
   height: auto;
 }
 
-img {
+.img {
   vertical-align: middle;
   border: 0;
+}
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+
+ul, {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.list-inline>li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.social-icon a {
+  background: $advalori-blue;
+  color: #fff;
+  padding: 4px 8px;
+  height: 30px;
+  width: 30px;
+  display: block;
+  border-radius: 50px;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+#partners {
+  margin-top: 60px;
+}
+
+.partners-head {
+  margin-bottom: 30px;
+}
+
+.partners-logo {
+  margin-bottom: 60px;
 }
 
 #contact {
   background-color: $advalori-lighter-gray;
 }
 
-#partners {
+.copyrights {
+  margin-top: 130px;
+}
+
+.address  {
   margin-top: 60px;
+}
+
+.bottom-footer {
+  margin-top: 60px;
+}
+
+.follow-us {
+  margin-top: 40px;
 }
