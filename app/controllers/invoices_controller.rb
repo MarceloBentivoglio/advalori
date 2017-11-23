@@ -1,6 +1,6 @@
 class InvoicesController < ApplicationController
   def index
-    @invoices = Invoice.all
+    @invoices = invoices
     @installments = Installment.all
   end
 
@@ -22,5 +22,9 @@ class InvoicesController < ApplicationController
 
   def invoice_params
     params.require(:invoice).permit()
+  end
+
+  def invoices
+    current_user.seller.invoices
   end
 end
