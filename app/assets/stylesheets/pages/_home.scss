@@ -29,7 +29,6 @@ p {
   }
 }
 
-
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -41,6 +40,7 @@ p {
   margin-bottom: 20px;
   $border-radius-large: 1px;
 }
+
 .services p {
   text-align: center;
 }
@@ -58,6 +58,7 @@ p {
   font-weight: 200;
   color: $advalori-dark-gray;
 }
+
 .video p {
   color: $advalori-dark-gray;
   font-size: 13px;
@@ -92,7 +93,7 @@ span.navy {
   -webkit-font-smoothing: antialiased;
 }
 
-.m-t-lg {
+.bottom-icon {
   margin-top: 20px;
 }
 
@@ -121,7 +122,6 @@ span.navy {
   text-align: center;
 }
 
-
 .img-circle {
   border-radius: 50%;
 }
@@ -135,18 +135,6 @@ span.navy {
 .img {
   vertical-align: middle;
   border: 0;
-}
-
-.fadeInLeft {
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
-}
-
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
 }
 
 .list-inline {
@@ -186,20 +174,12 @@ a {
   background-color: transparent;
 }
 
-
 #partners {
   margin-top: 60px;
 }
 
-.m-b-lg {
+.partners-head {
   margin-bottom: 30px;
-}
-
-.col-lg-12 {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
 }
 
 .partners-logo {
@@ -208,16 +188,23 @@ a {
 
 #contact {
   background-color: $advalori-lighter-gray;
-  margin-top: 60px;
-  background-image: url(word_map.png);
+
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
 
-.container-footer {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+.copyrights {
+  margin-top: 110px;
 }
 
+.address  {
+  margin-top: 40px;
+}
+
+.bottom-footer {
+  margin-top: 25px;
+}
+
+.follow-us {
+  margin-top: 25px;
+}
