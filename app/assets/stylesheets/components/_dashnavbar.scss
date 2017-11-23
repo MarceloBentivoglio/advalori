@@ -1,0 +1,26 @@
+.body-content {
+  position:absolute;
+  height:100%;
+  width:100%;
+  left: 200px;
+  padding-left: 0 !important;
+}
+
+.active-body {
+  left: 50px;
+  transition: margin-left 0.5s;
+}
+
+#dashnavbar {
+  position: relative;
+  height:50px;
+  width:100%;
+  background: #F2F3F6;
+  box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
+
+}
+#greeting-dashboard {
+  position: absolute;
+  bottom: 5%;
+  right: 15%;
+}
