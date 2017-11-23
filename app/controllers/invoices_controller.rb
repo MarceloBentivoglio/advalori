@@ -14,6 +14,7 @@ class InvoicesController < ApplicationController
       @invoice = Invoice.from_file(params[:invoice][:xml_file])
     else
       @invoice = Invoice.new(invoice_params)
+      @invoice.invoice_payer = invoice_payer
       @invoice.seller = current_user.seller
       @invoice.save!
     end
@@ -29,5 +30,9 @@ class InvoicesController < ApplicationController
 
   def invoices
     current_user.seller.invoices
+  end
+
+  def invoice_payer
+    InvoicePayer.find(params.require(:invoice).permit(:invoice_payer)[:invoice_payer])
   end
 end

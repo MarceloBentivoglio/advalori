@@ -1,5 +1,5 @@
 class Installment < ApplicationRecord
   belongs_to :invoice
 
-  validates :number, :value, :due_date, :invoice_id, presence: true
+  validates :number, :value, :due_date, :invoice, presence: true
 end
