@@ -13,13 +13,6 @@ p {
   font-weight: 300;
 }
 
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .services {
   padding-top: 30px;
 
@@ -34,7 +27,6 @@ p {
   margin-left: -15px;
 }
 
-
 .b-signup, b-signup-now {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -43,13 +35,6 @@ p {
 
 .services p {
   text-align: center;
-}
-
-.navy-line {
-  width: 60px;
-  height: 1px;
-  margin: 60px auto 0;
-  border-bottom: 2px solid $advalori-blue;
 }
 
 .video h2 {
@@ -65,7 +50,7 @@ p {
 }
 
 #process {
-  height: 70vh;
+  height: 60vh;
 }
 
 #blue-wrapper {
@@ -85,14 +70,6 @@ span.navy {
   font-size: 40px;
 }
 
-.fa {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
-
 .bottom-icon {
   margin-top: 20px;
 }
@@ -100,6 +77,8 @@ span.navy {
 #team {
   background-color: $advalori-lighter-gray;
   margin-top: 60px;
+  height: 50vh;
+
 }
 
 .team h4 {
@@ -113,6 +92,11 @@ span.navy {
   color: $advalori-medium-gray;
   font-size: 13px;
   margin: 0 0 10px;
+}
+
+.team-header {
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .team-member img {
@@ -137,12 +121,6 @@ span.navy {
   border: 0;
 }
 
-.list-inline {
-  padding-left: 0;
-  margin-left: -5px;
-  list-style: none;
-}
-
 ul, {
   margin-top: 0;
   margin-bottom: 10px;
@@ -162,7 +140,7 @@ li {
 .social-icon a {
   background: $advalori-blue;
   color: #fff;
-  padding: 4px 8px;
+  padding: 4px 6px;
   height: 30px;
   width: 30px;
   display: block;
@@ -175,7 +153,7 @@ a {
 }
 
 #partners {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .partners-head {
@@ -188,6 +166,11 @@ a {
 
 #contact {
   background-color: $advalori-lighter-gray;
+
+}
+
+.contact-header {
+  margin-top: 30px;
 }
 
 .copyrights {
@@ -195,13 +178,18 @@ a {
 }
 
 .address  {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .bottom-footer {
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 .follow-us {
-  margin-top: 40px;
+  margin-top: 50px;
 }
+
+.fa-facebook {
+  padding: 4px 6px;
+}
+
