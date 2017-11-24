@@ -1,25 +1,26 @@
+<%= render 'shared/navbarlateral' %>
 <div class="container">
   <div class="row">
-     <div class="col-sm-4 col-sm-offset-4">
-      <h2>Edit Seller</h2>
-       <%= simple_form_for @seller, url: user_seller_path do |f| %>
+   <div class="col-sm-4 col-sm-offset-4">
+    <h2>Edit Seller</h2>
+    <%= simple_form_for @seller, url: user_seller_path do |f| %>
 
-      <div class="form-inputs">
-        <%= f.input :cnpj %>
-        <%= f.input :name %>
-        <%= f.input :phone_number %>
-        <%= f.input :number_of_employees %>
-        <%= f.input :address %>
-        <%= f.input :address_number %>
-        <%= f.input :address_complement %>
-        <%= f.input :neighborhood %>
-        <%= f.input :zip_code %>
-        <%= f.input :city %>
-        <%= f.input :state %>
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Update" %>
-        <%= link_to "Back", :back %>
-      </div>
-      <% end %>
+    <div class="form-inputs">
+      <%= f.input :cnpj %>
+      <%= f.input :name %>
+      <%= f.input :phone_number %>
+      <%= f.input :number_of_employees %>
+      <%= f.input :address %>
+      <%= f.input :address_number %>
+      <%= f.input :address_complement %>
+      <%= f.input :neighborhood %>
+      <%= f.input :zip_code %>
+      <%= f.input :city %>
+      <%= f.input :state %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Update" %>
+      <%= link_to "Back", :back %>
+    </div>
+    <% end %>
 
