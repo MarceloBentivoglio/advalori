@@ -8,9 +8,10 @@
           <tr>
             <th>Payer</th>
             <th>Reference Number</th>
-            <th>Installment</th>
+            <th>Installments</th>
             <th>Invoice Amount</th>
             <th>Due date</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -21,12 +22,16 @@
           <td><%= invoice.installments.count  %></td>
           <td><%= invoice.total_value %></td>
           <td><%= Seller.find_by(id: invoice.seller_id).name %></td>
+          <td><%= invoice.status %></td>
         </tr>
           <% invoice.installments.each do |installment| %>
             <tr>
+              <td></td>
+              <td></td>
               <td><%= installment.number  %></td>
-              <td><%= installment.value  %></td>
+              <td>R$ <%= installment.value  %></td>
               <td><%= installment.due_date  %></td>
+              <td></td>
             </tr>
           <% end %>
         <% end %>
