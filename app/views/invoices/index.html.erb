@@ -21,7 +21,11 @@
           <td><%= invoice.number  %></td>
           <td><%= invoice.installments.count  %></td>
           <td><%= invoice.total_value %></td>
-          <td><%= Seller.find_by(id: invoice.seller_id).name %></td>
+          <% if invoice.installments.count == 1 %>
+            <td><%= invoice.installments.first.due_date %></td>
+          <% else %>
+            <td><%= "Details" %></td>
+          <% end %>
           <td><%= invoice.status %></td>
         </tr>
           <% invoice.installments.each do |installment| %>
