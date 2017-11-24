@@ -24,12 +24,12 @@ class SellersController < ApplicationController
   def create
     @seller = Seller.new(seller_params)
 
-    if @seller.save
+    if @seller.save && current_user.seller.nil? # Check if user doesnt have a seller
       current_user.seller = @seller
       current_user.save
       redirect_to user_path
     else
-      render :new
+      redirect_to user_seller_path(current_user)
     end
   end
 

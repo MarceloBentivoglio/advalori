@@ -3,4 +3,5 @@ class InvoicePayer < ApplicationRecord
   belongs_to :seller
 
   validates :cnpj, :name, :address, :address_number, :city, :neighborhood, :zip_code, :state, :phone_number, presence: true
+  validates :cnpj, uniqueness: true
 end
