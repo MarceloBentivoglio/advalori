@@ -15,6 +15,7 @@
 
 $(document).ready(function() {
   $('#drop').click(function() {
+    console.log('oi')
     $('.dropdown-spec').toggleClass('hidden')
   })
 })
