@@ -21,22 +21,29 @@
           <td><%= invoice.number  %></td>
           <td><%= invoice.installments.count  %></td>
           <td><%= invoice.total_value %></td>
-          <% if invoice.installments.count == 1 %>
-            <td><%= invoice.installments.first.due_date %></td>
-          <% else %>
+
+          <% if invoice.installments.count > 1 %>
+
             <td><%= "Details" %></td>
-          <% end %>
-          <td><%= invoice.status %></td>
-        </tr>
-          <% invoice.installments.each do |installment| %>
-            <tr>
-              <td></td>
-              <td></td>
-              <td><%= installment.number  %></td>
-              <td>R$ <%= installment.value  %></td>
-              <td><%= installment.due_date  %></td>
-              <td></td>
+            <td><%= invoice.status %></td>
             </tr>
+            <% invoice.installments.each do |installment| %>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td><%= installment.number  %></td>
+                  <td>R$ <%= installment.value  %></td>
+                  <td><%= installment.due_date  %></td>
+                  <td></td>
+                </tr>
+              <% end %>
+
+          <% else %>
+
+            <td><%= invoice.installments.first.due_date %></td>
+            <td><%= invoice.status %></td>
+            </tr>
+
           <% end %>
         <% end %>
       </tbody>
