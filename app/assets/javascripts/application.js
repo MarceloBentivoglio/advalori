@@ -11,3 +11,10 @@
 //= require cocoon
 
 //= require_tree .
+
+
+$(document).ready(function() {
+  $('#drop').click(function() {
+    $('.dropdown-spec').toggleClass('hidden')
+  })
+})
