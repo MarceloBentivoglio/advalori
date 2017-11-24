@@ -5,6 +5,8 @@ class SellersController < ApplicationController
   end
 
   def new
+    redirect_to user_seller_path(current_user) unless current_user.seller.nil?
+
     @user = current_user
     @seller = Seller.new
   end
