@@ -7,16 +7,11 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
   </head>
   <body>
 
     <%= render 'shared/flashes' %>
-    <%= render 'shared/navbarlateral' %>
-    <div class="container body-content">
-      <%= render 'shared/dashnavbar' %>
-      <%= yield %>
-    </div>
+    <%= yield %>
 
     <%= javascript_include_tag 'application' %>
     <%= yield(:js)  %>
