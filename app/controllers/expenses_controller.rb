@@ -1,7 +1,7 @@
 class ExpensesController < ApplicationController
 
   def index
-    @expense = expenses
+    @expenses = expenses
   end
 
   def show

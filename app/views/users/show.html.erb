@@ -1,1 +1,94 @@
-<%= render 'modal' %>
+<!-- <div class="main-page"> -->
+
+  <%= render 'shared/navbarlateral' %>
+
+  <div class="container body-content">
+    <div>
+      <%= render 'shared/dashnavbar' %>
+    </div>
+    <div>
+
+      <%= render 'modal' %>
+    </div>
+    <div class="container">
+      <div class="table">
+        <h2>My Invoices</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Payer</th>
+              <th>Reference Number</th>
+              <th>Installments</th>
+              <th>Invoice Amount</th>
+              <th>Due date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @invoices.each do |invoice| %>
+            <tr class="tr-highlight-overdue">
+              <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
+              <td><%= invoice.number  %></td>
+              <td><%= invoice.installments.count  %></td>
+              <td>R$ <%= invoice.total_value %></td>
+
+              <% if invoice.installments.count > 1 %>
+
+              <td><%= "Details" %></td>
+              <td><%= invoice.status %></td>
+            </tr>
+
+            <% else %>
+
+            <td><%= invoice.installments.first.due_date %></td>
+            <td><%= invoice.status %></td>
+          </tr>
+
+          <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="expenses">
+      <h2>My Expenses</h2>
+
+      <table class="table">
+        <%= link_to "Add Expense", new_user_expense_path, class: "btn btn-primary btn-md pull-right" %>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Expense</th>
+            <th scope="col">Value</th>
+            <th scope="col">Due Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @expenses.each do |expense| %>
+          <tr>
+            <th scope="row"><%= expense.id %></th>
+            <td><%= expense.supplier %></td>
+            <td><%= expense.value %></td>
+            <td><%= expense.due_date %></td>
+            <td>
+              <%= link_to(user_expenses_path, class: "btn btn-info btn-xs") do %>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <% end %>
+              <%= link_to(user_expenses_path, class: "btn btn-danger btn-xs") do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <h2>Cash Flow</h2>
+      <div class="chart">
+        <%= line_chart calc_expenses_chart_path %>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<!-- </div> -->
