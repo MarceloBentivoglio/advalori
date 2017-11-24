@@ -17,6 +17,7 @@ class InvoicesController < ApplicationController
         redirect_to new_user_invoice_payer_path
         return
       end
+
     else
       @invoice = Invoice.new(invoice_params)
       @invoice.invoice_payer = invoice_payer
