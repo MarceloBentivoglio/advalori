@@ -41,17 +41,24 @@
               <% end %>
             </li>
              <li>
-              <%= link_to user_seller_path(current_user) do %>
-              <%= t(".profile", default: "Edit Business Info") %>
-              <i class="fa fa-building fa-adjusted" ></i>
+              <%= link_to new_user_seller_path do %>
+                <%= t(".profile", default: "Edit Business Info") %>
+                <i class="fa fa-building fa-adjusted" ></i>
               <% end %>
             </li>
           </ul>
         </li>
         <li>
-          <%= link_to user_invoices_path do %>
-          <%= t(".profile", default: "Invoices") %>
-          <i class="fa fa-list-alt fa-adjusted "></i>
+          <% if current_user.seller %>
+            <%= link_to user_invoices_path do %>
+              <%= t(".profile", default: "Invoices") %>
+              <i class="fa fa-list-alt fa-adjusted "></i>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_seller_path do %>
+              <%= t(".profile", default: "Invoices") %>
+              <i class="fa fa-list-alt fa-adjusted "></i>
+            <% end %>
           <% end %>
         </li>
       </div>
