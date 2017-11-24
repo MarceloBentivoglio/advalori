@@ -20,7 +20,7 @@
           <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
           <td><%= invoice.number  %></td>
           <td><%= invoice.installments.count  %></td>
-          <td><%= invoice.total_value %></td>
+          <td>R$ <%= invoice.total_value %></td>
 
           <% if invoice.installments.count > 1 %>
 

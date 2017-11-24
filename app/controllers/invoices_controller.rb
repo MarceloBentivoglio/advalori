@@ -28,6 +28,10 @@ class InvoicesController < ApplicationController
     redirect_to user_path
   end
 
+  def show
+
+  end
+
   private
 
   def invoice_params
