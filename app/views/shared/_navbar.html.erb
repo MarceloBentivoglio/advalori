@@ -47,8 +47,23 @@
             <li><a class="page-scroll" href="#process">Process</a></li>
             <li><a class="page-scroll" href="#team">Team &amp; Partners</a></li>
             <li><a class="page-scroll" href="#contact">Contact</a></li>
-            <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "page-scroll" %></li>
+            <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path %></li>
           </ul>
+          <% content_for(:js) do %>
+            <script>
+              $(function() {
+                $(".page-scroll").click(function(event) {
+                  event.preventDefault();
+
+                  var link = this;
+                  var section = $(link.hash);
+                  var sectionTop = section.offset().top;
+                  var navbarHeight = $(".navbar-wagon").height();
+                  $("html").animate({ scrollTop: sectionTop - navbarHeight });
+                });
+              });
+            </script>
+          <% end %>
     <% end %>
   </div>
 
