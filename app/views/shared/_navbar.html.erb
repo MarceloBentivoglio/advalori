@@ -1,4 +1,4 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-fixed-top navbar-scroll">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logomarca.png" %>
@@ -40,7 +40,8 @@
     <% else %>
 
       <!-- Login link (when logged out) -->
-      <ul class="nav navbar-nav navbar-right">
+
+          <ul class="nav navbar-nav navbar-right">
             <li class="active"><a class="page-scroll" href="#page-top">Home</a></li>
             <li><a class="page-scroll" href="#factoring-wrapper">Solution</a></li>
             <li><a class="page-scroll" href="#process">Process</a></li>
