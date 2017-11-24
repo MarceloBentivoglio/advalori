@@ -16,6 +16,11 @@ class InvestorsController < ApplicationController
     end
   end
 
+  def show
+    @invoices = Invoice.where(status: "Available")
+
+  end
+
   private
 
   def investor_params

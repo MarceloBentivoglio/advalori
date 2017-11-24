@@ -1,0 +1,15 @@
+<div class="card">
+  <%= link_to user_invoice_path(invoice) do %>
+    <div class="card-top">
+      <p class="card-text justify-content-center align-items-center">Seller: <%= invoice.seller.name %></p>
+      <p class="card-text justify-content-center align-items-center">Payer: <%= invoice.invoice_payer.name %></p>
+    </div>
+    <div class="card-bottom">
+      <p class="card-text justify-content-center align-items-center">Total Value: R$<%= invoice.total_value %></p>
+      <p class="card-text justify-content-center align-items-center">Invoice Number: <%= invoice.number %></p>
+    </div>
+    <div class="card-button text-center">
+      <p class="btn btn-success" >Comprar</p>
+    </div>
+  <% end %>
+</div>
