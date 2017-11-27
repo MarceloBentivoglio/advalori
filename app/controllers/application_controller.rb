@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:is_seller])
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :cpf, :phone_number])
   end
