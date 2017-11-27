@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :sellers, only: [:new, :create, :update, :show]
     resources :investors, only: [:new, :create, :update, :show]
     resources :invoice_payers, only: [:new, :create, :destroy, :show, :index]
-    resources :invoices, only: [:new, :create, :index, :show]
+    resources :invoices, only: [:new, :create, :index, :show, :destroy]
     resources :expenses, only: [:new, :create, :update, :destroy, :index]
   end
 

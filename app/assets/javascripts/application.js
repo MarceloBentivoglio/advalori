@@ -18,9 +18,8 @@ $(document).ready(function() {
     $('.dropdown-spec').toggleClass('hidden')
   })
 
-
-
-  $('#install-details').click(function() {
+  $('.install-details').click(function(e) {
+    // e.preventDefault()
     var trId = $(this).parent().parent().attr('id')
     $('.tr-install').each(function (i, el) {
       if ( $(el).attr('id') == trId ) {
@@ -28,11 +27,8 @@ $(document).ready(function() {
 
       }
     })
-    })
-
- function deleteRow(btn) {
-  var row = btn.parentNode.parentNode;
-  row.parentNode.removeChild(row);
-}
-
   })
+
+
+
+})
