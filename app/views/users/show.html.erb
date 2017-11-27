@@ -1,10 +1,50 @@
 <!-- <div class="main-page"> -->
 <!--   <div class="container body-content">
  -->
-  <div class="container-inv">
+    <div class="container-inv">
     <div class="table">
       <h2>My Invoices</h2>
       <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Payer</th>
+              <th>Reference Number</th>
+              <th>Installments</th>
+              <th>Invoice Amount</th>
+              <th>Due date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @invoices.each do |invoice| %>
+            <tr class="tr-highlight-overdue">
+              <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
+              <td><%= invoice.number  %></td>
+              <td><%= invoice.installments.count  %></td>
+              <td>R$ <%= invoice.total_value %></td>
+
+              <% if invoice.installments.count > 1 %>
+
+              <td><%= "Details" %></td>
+              <td><%= invoice.status %></td>
+            </tr>
+
+            <% else %>
+
+            <td><%= invoice.installments.first.due_date %></td>
+            <td><%= invoice.status %></td>
+          </tr>
+
+          <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="expenses">
+      <h2>My Expenses</h2>
+
+      <table class="table">
+        <%= link_to "Add Expense", new_user_expense_path, class: "btn btn-primary btn-md pull-right" %>
         <thead>
           <tr>
             <th>Payer</th>
