@@ -6,7 +6,19 @@ class ApplicationController < ActionController::Base
 
 
   def after_sign_in_path_for(resource)
-    user_path
+    if current_user.is_seller
+      if current_user.seller
+        seller_path
+      else
+        new_seller_path
+      end
+    else
+      if current_user.investor
+        new_investor_path
+      else
+        new_investor_path
+      end
+    end
   end
 
   def configure_permitted_parameters
