@@ -18,39 +18,41 @@
       </tr>
     </thead>
     <tbody>
-    <% @invoices.each do |invoice| %>
-    <tr class="tr-highlight-overdue">
-      <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
-      <td><%= invoice.number  %></td>
-      <td><%= invoice.installments.count  %></td>
-      <td>R$ <%= invoice.total_value %></td>
+      <% @invoices.each do |invoice| %>
+      <tr class="tr-highlight-overdue" id="c-<%= invoice.id %>">
+        <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
+        <td><%= invoice.number  %></td>
+        <td><%= invoice.installments.count  %></td>
+        <td>R$ <%= invoice.total_value %></td>
 
-      <% if invoice.installments.count > 1 %>
+        <% if invoice.installments.count > 1 %>
 
-        <td><%= "Details" %></td>
-        <td><%= invoice.status %></td>
-        </tr>
+        <td><%= link_to "Details", '#', id: 'install-details' %></td>
+        <td></td>
         <% invoice.installments.each do |installment| %>
-            <tr>
-              <td></td>
-              <td></td>
-              <td><%= installment.number  %></td>
-              <td>R$ <%= installment.value  %></td>
-              <td><%= installment.due_date  %></td>
-              <td></td>
-            </tr>
-          <% end %>
+        <tr class='tr-install tr-hide' id="c-<%= invoice.id %>">
+          <td></td>
+          <td></td>
+          <td class='installment'><%= installment.number  %></td>
+          <td class='installment'>R$ <%= installment.value  %></td>
+          <td class='installment'><%= installment.due_date  %></td>
+          <td><%= invoice.status %></td>
 
-      <% else %>
+
+          <td></td>
+        </tr>
+        <% end %>
+
+        <% else %>
 
         <td><%= invoice.installments.first.due_date %></td>
         <td><%= invoice.status %></td>
-        </tr>
-
+      <td><input type="button" value="Delete" onclick="deleteRow(this)"/></td>
       <% end %>
+    </tr>
     <% end %>
   </tbody>
-  </table>
+</table>
 </div>
 
 
