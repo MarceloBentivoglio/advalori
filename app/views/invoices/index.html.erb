@@ -1,54 +1,56 @@
+<div>
+  <%= render 'shared/add_invoice_modal' %>
+</div>
 
-    <div class="container-inv">
-      <div class="col-lg-12">
-        <h5>Open Invoices</h5>
-      </div>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Payer</th>
-            <th>Reference Number</th>
-            <th>Installments</th>
-            <th>Invoice Amount</th>
-            <th>Due date</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @invoices.each do |invoice| %>
-        <tr class="tr-highlight-overdue">
-          <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
-          <td><%= invoice.number  %></td>
-          <td><%= invoice.installments.count  %></td>
-          <td>R$ <%= invoice.total_value %></td>
-
-          <% if invoice.installments.count > 1 %>
-
-            <td><%= "Details" %></td>
-            <td><%= invoice.status %></td>
-            </tr>
-            <% invoice.installments.each do |installment| %>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td><%= installment.number  %></td>
-                  <td>R$ <%= installment.value  %></td>
-                  <td><%= installment.due_date  %></td>
-                  <td></td>
-                </tr>
-              <% end %>
-
-          <% else %>
-
-            <td><%= invoice.installments.first.due_date %></td>
-            <td><%= invoice.status %></td>
-            </tr>
-
-          <% end %>
-        <% end %>
-      </tbody>
-      </table>
-    </div>
+<div class="container-inv">
+  <div class="col-lg-12">
+    <h5>Open Invoices</h5>
   </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Payer</th>
+        <th>Reference Number</th>
+        <th>Installments</th>
+        <th>Invoice Amount</th>
+        <th>Due date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @invoices.each do |invoice| %>
+    <tr class="tr-highlight-overdue">
+      <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
+      <td><%= invoice.number  %></td>
+      <td><%= invoice.installments.count  %></td>
+      <td>R$ <%= invoice.total_value %></td>
+
+      <% if invoice.installments.count > 1 %>
+
+        <td><%= "Details" %></td>
+        <td><%= invoice.status %></td>
+        </tr>
+        <% invoice.installments.each do |installment| %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td><%= installment.number  %></td>
+              <td>R$ <%= installment.value  %></td>
+              <td><%= installment.due_date  %></td>
+              <td></td>
+            </tr>
+          <% end %>
+
+      <% else %>
+
+        <td><%= invoice.installments.first.due_date %></td>
+        <td><%= invoice.status %></td>
+        </tr>
+
+      <% end %>
+    <% end %>
+  </tbody>
+  </table>
+</div>
 
 
