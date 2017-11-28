@@ -38,7 +38,7 @@ class SellersController < ApplicationController
     @seller.update(seller_params)
 
     redirect_to seller_path
-    sucess_message
+    success_message
   end
 
   private
@@ -47,7 +47,7 @@ class SellersController < ApplicationController
     params.require(:seller).permit(:cnpj, :name, :address, :address_number, :address_complement, :neighborhood, :city, :state, :zip_code, :phone_number, :number_of_employees)
   end
 
-   def sucess_message
+  def success_message
     flash[:notice] = "Your profile has been successfully updated"
   end
 
