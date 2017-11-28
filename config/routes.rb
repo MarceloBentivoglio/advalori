@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :invoices, only: [:index, :show] do
       resources :orders, only: [:create]
     end
+    resources :orders, only: [:index]
   end
 
 
