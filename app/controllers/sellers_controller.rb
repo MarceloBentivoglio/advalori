@@ -4,23 +4,17 @@ class SellersController < ApplicationController
     @sellers = Seller.all
   end
 
+  def show
+    @seller = Seller.find(current_user)
+    @invoice = Invoice.new
+    @expenses = current_user.seller.expenses
+  end
+
   def new
-    redirect_to user_seller_path(current_user) unless current_user.seller.nil?
+    redirect_to new_seller_path unless current_user.seller.nil?
 
     @user = current_user
     @seller = Seller.new
-  end
-
-  def show
-    @seller = Seller.find(current_user)
-  end
-
-  def update
-    @seller = Seller.find(current_user)
-    @seller.update(seller_params)
-
-    redirect_to user_path
-    sucess_message
   end
 
   def create
@@ -29,10 +23,19 @@ class SellersController < ApplicationController
     if @seller.save && current_user.seller.nil? # Check if user doesnt have a seller
       current_user.seller = @seller
       current_user.save
-      redirect_to user_path
+      redirect_to seller_path
     else
-      redirect_to user_seller_path(current_user)
+      redirect_to new_seller_path
     end
+
+  end
+
+  def update
+    @seller = Seller.find(current_user)
+    @seller.update(seller_params)
+
+    redirect_to seller_path
+    sucess_message
   end
 
   private

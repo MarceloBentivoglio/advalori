@@ -12,7 +12,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for @invoice, url: user_invoices_path do |f| %>
+        <%= simple_form_for @invoice, url: seller_invoices_path do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
@@ -25,7 +25,7 @@
           <div class="form-actions">
             <%= f.submit nil, :class => 'btn btn-primary' %>
             <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            new_user_invoice_payer_path, :class => 'btn' %>
+            new_seller_invoice_payer_path, :class => 'btn' %>
           </div>
         </div>
       <% end %>
