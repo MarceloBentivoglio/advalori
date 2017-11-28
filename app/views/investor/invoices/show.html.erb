@@ -1,0 +1,18 @@
+<h1>Invoice Details</h1>
+
+<h3>Invoice number <%= @invoice.number %></h3>
+<h3>Total Value <%= @invoice.total_value %></h3>
+
+<h5>Installments Details</h5>
+
+<% @invoice.installments.each do |installment| %>
+  <p>Reference Number: <%= installment.number  %></p>
+  <p>Value: R$ <%= installment.value  %></p>
+  <p>Due Date: <%= installment.due_date  %></p>
+<% end %>
+
+<p>Invoice's Status: <%= @invoice.status %></p>
+<p>Invoice's Seller: <%= @invoice.seller.name %></p>
+<p>Invoice's Payer: <%= @invoice.invoice_payer.name %></p>
+
+<%= button_to "Comprar", investor_invoice_orders_path(@invoice), class: "btn btn-primary" %>
