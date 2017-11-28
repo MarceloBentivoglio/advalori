@@ -1,0 +1,4 @@
+  <h3 class="chart-title">Monthly Cash Flow</h3>
+    <div class="chart expenses-chart">
+      <%= line_chart calc_expenses_chart_path, colors: ["#7698C2"], library: { animation: { duration: 2000, onProgress: "easeInQuad" } } %>
+    </div>
