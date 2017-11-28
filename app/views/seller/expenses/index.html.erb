@@ -1,6 +1,6 @@
 
 <div class="container">
-  <table class="table table-striped expense-table">
+  <table class="table expense-table">
     <h3 class="chart-title">My expenses</h3>
     <thead>
       <tr>
@@ -28,7 +28,7 @@
         </tr>
       <% end %>
       <tr>
-        <td colspan=4>
+        <td colspan=6>
           <%= render 'shared/add_expense_modal' %>
         </td>
       </tr>
@@ -37,12 +37,14 @@
 
   <h3 class="chart-title">Daily Resume</h3>
   <div class="chart expenses-chart">
-    <%= line_chart expenses_chart_path %>
+    <%= column_chart expenses_chart_path, colors: ["#7698C2"], library: {
+      animation: { onProgress: "easeInBack" } } %>
   </div>
 
-  <h3 class="chart-title">Monthly Cash Flow</h3>
-  <div class="chart expenses-chart">
-    <%= line_chart calc_expenses_chart_path %>
-  </div>
+
+    <h3 class="chart-title">Monthly Cash Flow</h3>
+    <div class="chart expenses-chart">
+      <%= line_chart calc_expenses_chart_path, colors: ["#7698C2"], library: { animation: { duration: 2000, onProgress: "easeInQuad" } } %>
+    </div>
 
 </div>

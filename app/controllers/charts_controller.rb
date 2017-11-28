@@ -1,6 +1,6 @@
 class ChartsController < ApplicationController
   def expenses_chart
-    render json: Expense.where(seller_id: current_user)
+    render json: Expense.where(seller_id: current_user.seller)
                   .where('due_date > ?', DateTime.now)
                   .group_by_day(:due_date)
                   .sum("value")

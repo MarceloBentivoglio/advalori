@@ -1,7 +1,7 @@
-<div id="customer-wrapper" class="container">
-  <div class="row text-center">
-    <h5>Invoice Payers</h5>
-    <table class="table table-striped th-invoice">
+<div id="customer-wrapper" class="container-inv">
+  <div class="row">
+    <h3 class="chart-title">Invoice Payers</h3>
+    <table class="table expense-table th-invoice">
       <thead>
         <tr>
           <th>CNPJ</th>
@@ -30,20 +30,27 @@
           <td><%= invoice_payer.state %></td>
           <td><%= invoice_payer.zip_code%></td>
           <td>
-            <%= link_to(edit_seller_invoice_payer_path(invoice_payer), class: "btn btn-info btn-xs") do %>
+            <%= link_to(edit_seller_invoice_payer_path(invoice_payer), class: "") do %>
             <i class="fa fa-pencil-square-o"></i>
             <% end %>
           </td>
           <td>
-            <%= link_to(seller_invoice_payer_path(invoice_payer), class: "btn btn-danger btn-xs", method: :delete, "data-confirm" => "Are you sure?" ) do %>
+            <%= link_to(seller_invoice_payer_path(invoice_payer), class: "", method: :delete, "data-confirm" => "Are you sure?" ) do %>
             <i class="fa fa-trash" aria-hidden="true"></i>
             <% end %>
           </td>
         </tr>
         <% end %>
+        <tr>
+          <td colspan=11>
+            <%= link_to "New Customer", new_seller_invoice_payer_path, class: "btn-expense" %>
+
+          </td>
+        </tr>
+
+
       </tbody>
     </table>
-    <%= link_to "New Customer", new_seller_invoice_payer_path, class: "btn btn-primary btn-md pull-right" %>
   </div>
 </div>
 </div>
