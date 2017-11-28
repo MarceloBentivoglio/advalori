@@ -17,14 +17,21 @@ $(document).ready(function() {
     $('.dropdown-spec').toggleClass('hidden')
   })
 
- $('.install-details').click(function(e) {
+  $('.install-details').click(function(e) {
     // e.preventDefault()
     var trId = $(this).parent().parent().attr('id')
     $('.tr-install').each(function (i, el) {
       if ( $(el).attr('id') == trId ) {
         $(el).toggleClass('tr-hide')
 
-     }
+      }
     })
   })
+
+  $('#cnpj').mask('00.000.000/0000-00');
+  $('#phone').mask('(00) 0000-0000');
+  $('#zip_code').mask('00000-000');
+
 })
+
+
