@@ -1,14 +1,8 @@
-
-
-<div>
-  <%= render 'shared/add_invoice_modal' %>
-</div>
-
 <div class="container-inv">
   <div class="col-lg-12">
-    <h5>Open Invoices</h5>
+    <h3 class="chart-title">Open Invoices</h3>
   </div>
-  <table class="table table-striped" id="table-invoices">
+  <table class="table expense-table" id="table-invoices">
     <thead>
       <tr>
         <th>Payer</th>
@@ -32,7 +26,7 @@
         <td><%= link_to "Details", '#', class: 'install-details' %></td>
         <td></td>
           <td>
-            <%= link_to(seller_invoice_path(invoice), class: "btn btn-danger btn-xs", method: :delete) do %>
+            <%= link_to(seller_invoice_path(invoice), class: "", method: :delete) do %>
             <i class="fa fa-trash" aria-hidden="true"></i>
             <% end %>
           </td>
@@ -55,14 +49,20 @@
 
         <td class='nowrap'><%= invoice.installments.first.due_date %></td>
         <td><%= invoice.status %></td>
-        <td>
-          <%= link_to(seller_invoice_path(invoice), class: "btn btn-danger btn-xs", method: :delete) do %>
+        <td colspan=2>
+          <%= link_to(seller_invoice_path(invoice), method: :delete) do %>
           <i class="fa fa-trash" aria-hidden="true"></i>
           <% end %>
         </td>
         <% end %>
       </tr>
       <% end %>
+
+      <tr>
+        <td colspan=7>
+          <%= render 'shared/add_invoice_modal' %>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
