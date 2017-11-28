@@ -11,27 +11,39 @@
       </li>
       <div class="menu">
         <li>
-          <%= link_to seller_path do %>
-           <%= t(".profile", default: "Dashboard") %>
-           <i class="fa fa-dashboard fa-adjusted"></i>
-          <% end %>
-        </li>
+          <% if current_user.is_seller? %>
+            <%= link_to seller_path do %>
+             <%= t(".profile", default: "Dashboard") %>
+             <i class="fa fa-dashboard fa-adjusted"></i>
+            <% end %>
 
-        <% if current_user.is_seller? %>
-          <li>
+            <%= link_to seller_invoices_path do %>
+              <%= t(".profile", default: "Invoices") %>
+              <i class="fa fa-list-alt fa-adjusted "></i>
+            <% end %>
+
             <%= link_to seller_invoice_payers_path do %>
               <%= t(".profile", default: "Customers") %>
               <i class="fa fa-handshake-o fa-adjusted"></i>
             <% end %>
-          </li>
 
-          <li>
             <%= link_to seller_expenses_path do %>
               <%= t(".profile", default: "Expenses") %>
               <i class="fa fa-money fa-adjusted"></i>
             <% end %>
-          </li>
-        <% end %>
+
+          <% else %>
+            <%= link_to investor_path do %>
+              <%= t(".profile", default: "Dashboard") %>
+              <i class="fa fa-dashboard fa-adjusted"></i>
+            <% end %>
+
+            <%= link_to investor_invoices_path do %>
+              <%= t(".profile", default: "Invoices") %>
+              <i class="fa fa-list-alt fa-adjusted "></i>
+            <% end %>
+          <% end %>
+        </li>
 
         <li role="presentation" class="dropdown" id="drop">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -44,19 +56,17 @@
               <i class="fa fa-pencil-square-o fa-adjusted"></i>
               <% end %>
             </li>
+            <% if current_user.is_seller? %>
              <li>
               <%= link_to edit_seller_path do %>
                 <%= t(".profile", default: "Edit Business Info") %>
                 <i class="fa fa-building fa-adjusted" ></i>
               <% end %>
             </li>
+            <% end %>
           </ul>
         </li>
         <li>
-            <%= link_to seller_invoices_path do %>
-              <%= t(".profile", default: "Invoices") %>
-              <i class="fa fa-list-alt fa-adjusted "></i>
-            <% end %>
         </li>
       </div>
     </ul>
