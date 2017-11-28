@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
       end
     else
       if current_user.investor
-        new_investor_path
+        investor_path
       else
         new_investor_path
       end
