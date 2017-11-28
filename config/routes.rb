@@ -15,7 +15,10 @@ Rails.application.routes.draw do
 
   resource :investor, only: [:new, :create, :edit, :update, :show]
   namespace :investor do
-    resources :invoices, only: [:index, :show]
+    resources :invoices, only: [:index, :show] do
+      resources :orders, only: [:create]
+    end
+    resources :orders, only: [:index]
   end
 
 
