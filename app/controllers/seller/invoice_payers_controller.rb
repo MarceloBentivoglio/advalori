@@ -21,6 +21,24 @@ class Seller::InvoicePayersController < ApplicationController
     @invoice_payers = InvoicePayer.all
   end
 
+  def destroy
+    @invoice_payer = InvoicePayer.find(params[:id])
+    @invoice_payer.destroy
+    redirect_to seller_invoice_payers_path
+  end
+
+    def edit
+    @invoice_payer = InvoicePayer.find(params[:id])
+
+  end
+
+  def update
+    @invoice_payer = InvoicePayer.find(current_user.seller.invoice_payers)
+    @invoice_payer.update(invoice_payer_params)
+    redirect_to seller_invoice_payer_path
+    sucess_message
+  end
+
   private
 
   def invoice_payer_params

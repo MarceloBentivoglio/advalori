@@ -33,6 +33,13 @@ class Seller::InvoicesController < ApplicationController
 
   end
 
+  def destroy
+    @invoice = Invoice.find(params[:id])
+    @invoice.installments.each { |inst| inst.destroy }
+    @invoice.destroy
+    redirect_to seller_invoices_path
+  end
+
   private
 
   def invoice_params
