@@ -16,8 +16,8 @@
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
         <%= f.input :name %>
-        <%= f.input :cpf %>
-        <%= f.input :phone_number %>
+        <%= f.input :cpf, input_html:{ id:"cpf", placeholder: "000.000.000-00"}%>
+        <%= f.input :phone_number,input_html:{ id:"phone", placeholder:"(00) 0000-0000"}%>
         <%= f.input :is_seller , as: :radio_buttons, collection: [['Seller', true], ['Investor', false]], label: "I'm a..." %>
         <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, label: "New Password" %>
         <%= f.input :password_confirmation, required: false, label: "New Password Confirmation" %>

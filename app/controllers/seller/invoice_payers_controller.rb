@@ -4,7 +4,7 @@ class Seller::InvoicePayersController < ApplicationController
   end
 
   def new
-    @invoice_payer = InvoicePayer.new
+    @invoice_payer = InvoicePayer.new(state: "SP", city: "São Paulo")
   end
 
   def create
@@ -33,10 +33,10 @@ class Seller::InvoicePayersController < ApplicationController
   end
 
   def update
-    @invoice_payer = InvoicePayer.find(current_user.seller.invoice_payers)
+    @invoice_payer = InvoicePayer.find(params[:id])
     @invoice_payer.update(invoice_payer_params)
-    redirect_to seller_invoice_payer_path
-    sucess_message
+    redirect_to seller_invoice_payers_path
+    success_message
   end
 
   private
@@ -47,5 +47,9 @@ class Seller::InvoicePayersController < ApplicationController
 
   def invoice_payers
     current_user.seller.invoice_payers
+  end
+
+  def success_message
+    flash[:notice] = "Your profile has been successfully updated"
   end
 end

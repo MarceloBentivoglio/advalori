@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 
-    <%= simple_form_for @invoice_payer, url: seller_invoice_payers_path do |f| %>
+    <%= simple_form_for [:seller, @invoice_payer] do |f| %>
     <%= f.input :cnpj, input_html:{ id:"cnpj", placeholder: "00.000.000/0000-00"}%>
     <%= f.input :name %>
     <%= f.input :address %>
@@ -21,8 +21,8 @@
     new dgCidadesEstados({
           cidade: document.getElementById('cidade'),
           estado: document.getElementById('estado'),
-          estadoVal: 'SP',
-          cidadeVal: 'São Paulo'
+          estadoVal: '<%= @invoice_payer.state %>',
+          cidadeVal: '<%= @invoice_payer.city %>'
         })
   </script>
 </div>
