@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resource :seller, only: [:new, :create, :edit, :update, :show]
   namespace :seller do
     resources :invoices, only: [:new, :create, :index, :show, :destroy]
-    resources :expenses, only: [:new, :create, :update, :destroy, :index]
+    resources :expenses, only: [:new, :create, :update, :edit, :destroy, :index]
     resources :invoice_payers, only: [:new, :create, :destroy, :show, :index, :edit, :update]
   end
 
