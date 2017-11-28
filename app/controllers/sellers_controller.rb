@@ -28,6 +28,11 @@ class SellersController < ApplicationController
 
   end
 
+  def edit
+    @seller = current_user.seller
+
+  end
+
   def update
     @seller = Seller.find(current_user)
     @seller.update(seller_params)
