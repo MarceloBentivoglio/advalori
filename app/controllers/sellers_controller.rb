@@ -9,7 +9,7 @@ class SellersController < ApplicationController
   end
 
   def new
-    redirect_to new_seller_path unless current_user.seller.nil?
+    redirect_to edit_seller_path if current_user.seller
 
     @user = current_user
     @seller = Seller.new

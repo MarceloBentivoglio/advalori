@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :invoice_payers, only: [:new, :create, :destroy, :show, :index]
   end
 
-  resource :investor, only: [:new, :create, :update, :show]
+  resource :investor, only: [:new, :create, :edit, :update, :show]
   namespace :investor do
     resources :invoices, only: [:index, :show]
   end
