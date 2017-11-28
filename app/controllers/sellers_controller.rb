@@ -6,6 +6,7 @@ class SellersController < ApplicationController
 
   def show
     @invoice = Invoice.new
+    @invoices = current_user.seller.invoices.order(created_at: :desc).first(3)
   end
 
   def new
