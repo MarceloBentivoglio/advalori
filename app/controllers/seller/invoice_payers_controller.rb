@@ -1,4 +1,4 @@
-class InvoicePayersController < ApplicationController
+class Seller::InvoicePayersController < ApplicationController
   def index
     @invoice_payers = invoice_payers
   end
@@ -11,7 +11,7 @@ class InvoicePayersController < ApplicationController
     @invoice_payer = InvoicePayer.new(invoice_payer_params)
     @invoice_payer.seller = current_user.seller
     if @invoice_payer.save
-      redirect_to user_path
+      redirect_to seller_path
     else
       render :new
     end

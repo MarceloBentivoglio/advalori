@@ -16,7 +16,6 @@
             </tr>
           </thead>
           <tbody>
-            <% if not @invoices.nil?%>
             <% @invoices.each do |invoice| %>
             <tr class="tr-highlight-overdue">
               <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
@@ -38,8 +37,6 @@
 
           <% end %>
           <% end %>
-
-            <% end %>
         </tbody>
       </table>
     </div>
@@ -59,9 +56,6 @@
           </tr>
         </thead>
         <tbody>
-
-          <% if not @invoices.nil? %>
-
           <% @invoices.each do |invoice| %>
           <tr class="tr-highlight-overdue">
             <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
@@ -83,7 +77,6 @@
 
         <% end %>
         <% end %>
-          <% end %>
       </tbody>
     </table>
   </div>

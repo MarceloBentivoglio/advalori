@@ -10,7 +10,7 @@ class InvestorsController < ApplicationController
     if @investor.save
       current_user.investor = @investor
       current_user.save
-      redirect_to user_path
+      redirect_to seller_path
     else
       render :new
     end

@@ -4,12 +4,18 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resource :user, only: [:show] do
-    resources :sellers, only: [:new, :create, :update, :show]
-    resources :investors, only: [:new, :create, :update, :show]
-    resources :invoice_payers, only: [:new, :create, :destroy, :show, :index]
-    resources :invoices, only: [:new, :create, :index, :show, :destroy]
+  resource :user, only: [:show]
+
+  resource :seller, only: [:new, :create, :update, :show]
+  namespace :seller do
+    resources :invoices, only: [:new, :create, :index, :show]
     resources :expenses, only: [:new, :create, :update, :destroy, :index]
+    resources :invoice_payers, only: [:new, :create, :destroy, :show, :index]
+  end
+
+  resource :investor, only: [:new, :create, :update, :show]
+  namespace :investor do
+    resources :invoices, only: [:index, :show]
   end
 
 

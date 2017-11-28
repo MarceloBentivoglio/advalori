@@ -10,9 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Dashboard", user_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Invoices", new_user_invoice_payer_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Expenses", user_expenses_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", seller_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Invoices", new_seller_invoice_payer_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Expenses", seller_expenses_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

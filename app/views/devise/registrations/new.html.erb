@@ -8,7 +8,7 @@
 
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :seller , as: :radio_buttons, collection: [['Seller', true], ['Investor', false]], label: "I'm a..." %>
+        <%= f.input :is_seller , as: :radio_buttons, collection: [['Seller', true], ['Investor', false]], label: "I'm a..." %>
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
       </div>

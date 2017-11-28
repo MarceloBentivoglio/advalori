@@ -1,4 +1,4 @@
-<%= simple_form_for @invoice, url: user_invoices_path do |f| %>
+<%= simple_form_for @invoice, url: seller_invoices_path do |f| %>
   <%= f.input :number %>
   <%= f.input :total_value %>
   <%= f.input :invoice_payer, collection: current_user.seller.invoice_payers %>
