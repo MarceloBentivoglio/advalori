@@ -1,7 +1,6 @@
-<%= render 'shared/add_expense_modal' %>
+
 <div class="container">
   <table class="table">
-    <%= link_to "Add Expense", new_seller_expense_path, class: "btn btn-primary btn-md pull-right" %>
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -27,6 +26,12 @@
            </td>
         </tr>
       <% end %>
+      <tr>
+        <td>
+          <%= render 'shared/add_expense_modal' %>
+
+        </td>
+      </tr>
     </tbody>
   </table>
 

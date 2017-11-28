@@ -1,0 +1,17 @@
+.btn-expense {
+  text-decoration: none;
+  color: #7698C2;
+  background-color: #fff;
+  border: none;
+  font-weight: 400;
+
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.btn-expense:hover {
+  color: #3a4b5d;
+  // border: 1px solid #D7D8DB;
+  // box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 1px 2px 0 rgba(0,0,0,0.19);
+}
