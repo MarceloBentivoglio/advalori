@@ -11,6 +11,7 @@
         <th class="nowrap">Invoice Amount</th>
         <th>Due date</th>
         <th>Status</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -49,7 +50,7 @@
         <td class='nowrap'><%= invoice.installments.first.due_date %></td>
         <td><%= invoice.status %></td>
         <td colspan=2>
-          <%= link_to(seller_invoice_path(invoice), method: :delete) do %>
+          <%= link_to(seller_invoice_path(invoice), class: "", method: :delete, "data-confirm" => "Are you sure?" ) do %>
           <i class="fa fa-trash" aria-hidden="true"></i>
           <% end %>
         </td>
