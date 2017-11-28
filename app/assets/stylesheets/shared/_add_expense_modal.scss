@@ -15,3 +15,50 @@
   // border: 1px solid #D7D8DB;
   // box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 1px 2px 0 rgba(0,0,0,0.19);
 }
+
+.expense-table {
+  background-color: #fff !important;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 1px 2px 0 rgba(0,0,0,0.19);
+  margin-top: 20px;
+
+}
+
+table thead tr th {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1E1F21;
+  padding-left: 15px !important;
+}
+
+table tbody tr th {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1E1F21;
+  padding-left: 15px !important;
+}
+
+table tbody tr td {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1E1F21;
+  padding-left: 15px !important;
+}
+
+.expenses-chart {
+  background-color: white;
+  color: #1E1F21;
+  margin-top: 10px;
+  padding: 10px 10px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 1px 2px 0 rgba(0,0,0,0.19);
+
+}
+
+.row-index {
+  width: 60px !important;
+}
+
+.chart-title {
+  font-size: 17px;
+  font-weight: 400;
+  color: #87888A;
+}

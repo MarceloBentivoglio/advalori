@@ -1,12 +1,13 @@
 
 <div class="container">
-  <table class="table">
+  <table class="table table-striped expense-table">
+    <h3 class="chart-title">My expenses</h3>
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col" class="row-index">#</th>
         <th scope="col">Expense</th>
         <th scope="col">Value</th>
-        <th scope="col">Due Date</th>
+        <th scope="col" colspan=2>Due Date</th>
       </tr>
     </thead>
     <tbody>
@@ -15,31 +16,32 @@
           <th scope="row"><%= expense.id %></th>
           <td><%= expense.supplier %></td>
           <td><%= expense.value %></td>
-          <td><%= expense.due_date %></td>
+          <td><%= expense.due_date.strftime('%d %b, %Y') %></td>
           <td>
-            <%= link_to(seller_expenses_path, class: "btn btn-info btn-xs") do %>
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <%= link_to(seller_expenses_path, class: "") do %>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
             <% end %>
-            <%= link_to(seller_expenses_path, class: "btn btn-danger btn-xs") do %>
+            <%= link_to(seller_expenses_path, class: "") do %>
               <i class="fa fa-trash" aria-hidden="true"></i>
             <% end %>
            </td>
         </tr>
       <% end %>
       <tr>
-        <td>
+        <td colspan=4>
           <%= render 'shared/add_expense_modal' %>
-
         </td>
       </tr>
     </tbody>
   </table>
 
-  <div class="chart">
+  <h3 class="chart-title">Daily Resume</h3>
+  <div class="chart expenses-chart">
     <%= line_chart expenses_chart_path %>
   </div>
 
-  <div class="chart">
+  <h3 class="chart-title">Monthly Cash Flow</h3>
+  <div class="chart expenses-chart">
     <%= line_chart calc_expenses_chart_path %>
   </div>
 
