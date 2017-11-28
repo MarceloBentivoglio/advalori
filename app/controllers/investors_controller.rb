@@ -1,6 +1,8 @@
 class InvestorsController < ApplicationController
 
   def new
+    redirect_to edit_investor_path if current_user.investor
+
     @investor = Investor.new
   end
 
@@ -10,7 +12,7 @@ class InvestorsController < ApplicationController
     if @investor.save
       current_user.investor = @investor
       current_user.save
-      redirect_to seller_path
+      redirect_to investor_path
     else
       render :new
     end
@@ -18,6 +20,11 @@ class InvestorsController < ApplicationController
 
   def show
     @invoices = Invoice.where(status: "Available")
+
+  end
+
+  def edit
+    @investor = current_user.investor
 
   end
 
