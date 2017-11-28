@@ -37,12 +37,13 @@
 
   <h3 class="chart-title">Daily Resume</h3>
   <div class="chart expenses-chart">
-    <%= line_chart expenses_chart_path %>
+    <%= column_chart expenses_chart_path, colors: ["#7698C2"] %>
   </div>
 
-  <h3 class="chart-title">Monthly Cash Flow</h3>
-  <div class="chart expenses-chart">
-    <%= line_chart calc_expenses_chart_path %>
-  </div>
+
+    <h3 class="chart-title">Monthly Cash Flow</h3>
+    <div class="chart expenses-chart">
+      <%= line_chart calc_expenses_chart_path, colors: ["#7698C2"] %>
+    </div>
 
 </div>
