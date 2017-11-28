@@ -17,4 +17,18 @@ $(document).ready(function() {
   $('#drop').click(function() {
     $('.dropdown-spec').toggleClass('hidden')
   })
+
+  $('.install-details').click(function(e) {
+    // e.preventDefault()
+    var trId = $(this).parent().parent().attr('id')
+    $('.tr-install').each(function (i, el) {
+      if ( $(el).attr('id') == trId ) {
+        $(el).toggleClass('tr-hide')
+
+      }
+    })
+  })
+
+
+
 })
