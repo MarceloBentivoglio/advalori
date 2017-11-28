@@ -2,7 +2,7 @@
   <div class="col col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 
     <%= simple_form_for @invoice_payer, url: seller_invoice_payers_path do |f| %>
-      <%= f.input :cnpj %>
+      <%= f.input :cnpj%>
       <%= f.input :name %>
       <%= f.input :address %>
       <%= f.input :address_number %>
@@ -11,7 +11,7 @@
       <%= f.input :city %>
       <%= f.input :state %>
       <%= f.input :zip_code %>
-      <%= f.input :phone_number %>
+      <%= f.input :phone_number%>
       <%= f.submit "Save Infos", class: "btn btn-primary" %>
     <% end %>
 

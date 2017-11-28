@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'chartkick', '~> 2.2.0'
 gem "groupdate"
+gem 'jquery_mask_rails'
 
 gem "cocoon"
 
