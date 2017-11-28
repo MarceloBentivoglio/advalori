@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resource :user, only: [:show]
 
-  resource :seller, only: [:new, :create, :update, :show]
+  resource :seller, only: [:new, :create, :edit, :update, :show]
   namespace :seller do
     resources :invoices, only: [:new, :create, :index, :show]
     resources :expenses, only: [:new, :create, :update, :destroy, :index]
