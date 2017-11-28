@@ -1,6 +1,6 @@
 class Seller::InvoicePayersController < ApplicationController
   def index
-    @invoice_payers = invoice_payers
+    @invoice_payers = current_user.seller.invoice_payers
   end
 
   def new
