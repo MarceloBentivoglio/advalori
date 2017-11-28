@@ -5,9 +5,7 @@ class SellersController < ApplicationController
   end
 
   def show
-    @seller = Seller.find(current_user)
     @invoice = Invoice.new
-    @expenses = current_user.seller.expenses
   end
 
   def new
