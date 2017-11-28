@@ -1,6 +1,7 @@
 class Seller::ExpensesController < ApplicationController
 
   def index
+    @expense = Expense.new
     @expenses = expenses
   end
 
