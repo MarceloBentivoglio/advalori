@@ -1,4 +1,4 @@
-class ExpensesController < ApplicationController
+class Seller::ExpensesController < ApplicationController
 
   def index
     @expenses = expenses
@@ -17,7 +17,7 @@ class ExpensesController < ApplicationController
     @expense.seller = current_user.seller
 
     if @expense.save
-      redirect_to user_expenses_path
+      redirect_to seller_expenses_path
     else
       render :new
     end

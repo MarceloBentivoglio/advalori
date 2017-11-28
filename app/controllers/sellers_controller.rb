@@ -6,6 +6,8 @@ class SellersController < ApplicationController
 
   def show
     @seller = Seller.find(current_user)
+    @invoice = Invoice.new
+    @expenses = current_user.seller.expenses
   end
 
   def new
@@ -32,7 +34,7 @@ class SellersController < ApplicationController
     @seller = Seller.find(current_user)
     @seller.update(seller_params)
 
-    redirect_to user_path
+    redirect_to seller_path
     sucess_message
   end
 
