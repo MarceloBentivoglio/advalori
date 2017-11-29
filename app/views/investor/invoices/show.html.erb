@@ -1,25 +1,44 @@
-<h1>Invoice Details</h1>
+<div class="container text-center">
 
-<h3>Invoice number <%= @invoice.number %></h3>
-<h3>Total Value <%= @invoice.total_value %></h3>
-<p>Invoice's Status: <%= @invoice.status %></p>
-<p>Invoice's Seller: <%= @invoice.seller.name %></p>
-<p>Invoice's Payer: <%= @invoice.invoice_payer.name %></p>
+  <h1>Invoice Details</h1>
 
-<br>
+  <br>
 
-<h5>Installments Details</h5>
+  <h4>Invoice Number: <%= @invoice.number %></h4>
+  <h4>Total Value: R$ <%= @invoice.total_value %></h4>
+  <p>Invoice's Status: <%= @invoice.status %></p>
+  <p>Invoice's Seller: <%= @invoice.seller.name %></p>
+  <p>Invoice's Payer: <%= @invoice.invoice_payer.name %></p>
 
-<% @invoice.installments.each do |installment| %>
-  <p>Reference Number: <%= installment.number  %></p>
-  <p>Value: R$ <%= installment.value  %></p>
-  <p>Due Date: <%= installment.due_date  %></p>
-<% end %>
+  <br>
 
+  <h4>Installments Details</h4>
+  <br>
 
-  <% if @invoice.status == "Available" %>
+  <div class="row">
+
+    <% @invoice.installments.each do |installment| %>
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+      <div class="card">
+
+        <p>Reference Number: <%= installment.number  %></p>
+        <p>Value: R$ <%= installment.value  %></p>
+        <p>Due Date: <%= installment.due_date  %></p>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <br>
+
+    <% if @invoice.status == "Available" %>
     <%= button_to "Comprar", investor_invoice_orders_path(@invoice), class: "btn btn-primary" %>
-  <% elsif %>
+    <% elsif %>
     <%= link_to 'This Invoice is not Available', investor_path, class: "btn btn-danger" %>
-  <% end %>
+    <% end %>
 
+
+
+
+</div>
