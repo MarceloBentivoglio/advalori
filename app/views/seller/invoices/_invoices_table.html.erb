@@ -1,8 +1,4 @@
-<div class="container">
   <div class="col-lg-12">
-    <% if invoices.any? %>
-      <h3 class="chart-title"><%= invoices.first.status %> Invoices</h3>
-    <% end %>
   </div>
   <table class="table expense-table" id="table-invoices">
     <thead>
@@ -37,7 +33,10 @@
           <td><%= invoice.status %></td>
 
           <% if invoice.status == 'Not Available' %>
-            <td><%= link_to "Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-success" %></td>
+            <td><%= link_to "Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-success btn-invoice-status" %></td>
+          <% end %>
+          <% if invoice.status == 'Available' %>
+            <td><%= link_to "Não Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-primary btn-invoice-status" %></td>
           <% end %>
           <td>
             <%= link_to(seller_invoice_path(invoice), class: "", method: :delete) do %>
@@ -54,12 +53,13 @@
 
               <td class='installment'><%= installment.number  %></td>
 
-              <td>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span>
+              <td class='installment'>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span>
               </td>
 
-              <td class='installment'><%= installment.due_date.strftime('%d/%m/%Y')  %></td>
 
-              <td><%= invoice.status %></td>
+              <td class='installment'><%= installment.due_date.strftime('%d/%m/%Y') %></td>
+
+              <td class='installment'><%= invoice.status %></td>
 
               <td></td>
 
@@ -75,7 +75,10 @@
 
           <% end %>
           <% if invoice.status == 'Not Available' %>
-            <td><%= link_to "Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-success" %></td>
+            <td><%= link_to "Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-success btn-invoice-status" %></td>
+          <% end %>
+          <% if invoice.status == 'Available' %>
+            <td><%= link_to "Não Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-primary btn-invoice-status" %></td>
           <% end %>
 
           <td colspan=2>
@@ -96,5 +99,4 @@
       </tr>
     </tbody>
   </table>
-</div>
 

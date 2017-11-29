@@ -37,7 +37,11 @@ class Seller::InvoicesController < ApplicationController
 
   def update
     invoice = Invoice.find(params[:id])
-    invoice.update(status: "Available")
+    if invoice.status == 'Not Available'
+      invoice.update(status: "Available")
+    else
+      invoice.update(status: "Not Available")
+    end
 
     redirect_to seller_invoices_path
   end
