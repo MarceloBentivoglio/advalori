@@ -57,7 +57,7 @@
               <td>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span>
               </td>
 
-              <td class='installment'><%= installment.due_date  %></td>
+              <td class='installment'><%= installment.due_date.strftime('%d/%m/%Y') %></td>
 
               <td><%= invoice.status %></td>
 
@@ -66,7 +66,7 @@
             </tr>
           <% end %>
         <% else %>
-          <td class='nowrap'><%= invoice.installments.first.due_date %></td>
+          <td class='nowrap'><%= invoice.installments.first.due_date.strftime('%d/%m/%Y') %></td>
 
           <td><%= invoice.status %></td>
 

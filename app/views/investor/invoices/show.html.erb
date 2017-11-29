@@ -23,7 +23,7 @@
 
         <p>Reference Number: <%= installment.number  %></p>
         <p>Value: R$ <%= installment.value  %></p>
-        <p>Due Date: <%= installment.due_date  %></p>
+        <p>Due Date: <%= installment.due_date.strftime('%d/%m/%Y') %></p>
 
       </div>
     </div>

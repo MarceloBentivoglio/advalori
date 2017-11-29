@@ -31,7 +31,7 @@
 
             <% else %>
 
-            <td><%= invoice.installments.first.due_date %></td>
+            <td><%= invoice.installments.first.due_date.strftime('%d/%m/%Y') %></td>
             <td><%= invoice.status %></td>
           </tr>
 
@@ -71,7 +71,7 @@
 
           <% else %>
 
-          <td><%= invoice.installments.first.due_date %></td>
+          <td><%= invoice.installments.first.due_date.strftime('%d/%m/%Y') %></td>
           <td><%= invoice.status %></td>
         </tr>
 
@@ -100,7 +100,7 @@
           <th scope="row"><%= expense.id %></th>
           <td><%= expense.supplier %></td>
           <td><%= expense.value %></td>
-          <td><%= expense.due_date %></td>
+          <td><%= expense.due_date.strftime('%d/%m/%Y') %></td>
           <td>
             <%= link_to(seller_expenses_path, class: "btn btn-info btn-xs") do %>
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
