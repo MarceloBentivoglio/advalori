@@ -1,7 +1,4 @@
-
-<div class="container">
   <table class="table expense-table">
-    <h3 class="chart-title">My expenses</h3>
     <thead>
       <tr>
         <th scope="col" class="row-index">#</th>
@@ -18,7 +15,7 @@
         <th scope="row"><%= expense.id %></th>
         <td><%= expense.supplier %></td>
         <td>R$ <span id='money'><%= "#{'%.02f' % expense.value}" %></span></td>
-        <td><%= expense.due_date.strftime('%d %b, %Y') %></td>
+        <td><%= expense.due_date.strftime('%d/%m/%Y') %></td>
         <td>
         </td>
         <td>
@@ -40,4 +37,3 @@
       </tr>
     </tbody>
   </table>
-</div>
