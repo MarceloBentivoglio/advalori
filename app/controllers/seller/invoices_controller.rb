@@ -1,7 +1,8 @@
 class Seller::InvoicesController < ApplicationController
   def index
     @invoice = Invoice.new
-    @invoices = invoices
+    @invoices_available = invoices.where(status: 'Available')
+    @invoices_sold = invoices.where(status: 'Sold')
     @installments = Installment.all
   end
 

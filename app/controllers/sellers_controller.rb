@@ -6,9 +6,10 @@ class SellersController < ApplicationController
 
   def show
     @invoice = Invoice.new
-    @invoices = current_user.seller.invoices.order(created_at: :desc).first(3)
+    @invoices_sold = current_user.seller.invoices.where(status: 'Sold').order(created_at: :desc).first(3)
+    @invoices_available = current_user.seller.invoices.where(status: 'Available').order(created_at: :desc).first(3)
     @expense = Expense.new
-    @expenses = current_user.seller.expenses.order(due_date: :desc).first(5)
+    @expenses = current_user.seller.expenses.order(due_date: :asc).first(5)
 
   end
 
