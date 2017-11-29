@@ -36,7 +36,34 @@ invoice_payers = [
       neighborhood: "Jose Ferreira da Costa Jr",
       city:"Marilia",
       seller_id: 1
+    },
+
+    {
+      cnpj: "01234567891011",
+      name: "LE WAGON",
+      address: "RUA MOURATO COELHO",
+      address_number: "280",
+      phone_number:"1433112726",
+      state:"SP",
+      zip_code: "17539059",
+      neighborhood: "Jose Ferreira da Costa Jr",
+      city:"São Paulo",
+      seller_id: 1
+    },
+
+    {
+      cnpj: "11109876543210",
+      name: "SAMSUNG",
+      address: "AV PAULISTA",
+      address_number: "100",
+      phone_number:"1190112726",
+      state:"SP",
+      zip_code: "17539059",
+      neighborhood: "Bela Vista",
+      city:"São Paulo",
+      seller_id: 1
     }
+
   ]
 
   sellers = [
