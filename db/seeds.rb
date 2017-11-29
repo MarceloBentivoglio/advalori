@@ -12,6 +12,8 @@ Investor.destroy_all
 
 User.destroy_all
 
+Expense.destroy_all
+
 invoice_payers = [
   {
     cnpj: "45543915037697",
@@ -121,6 +123,60 @@ invoice_payers = [
     }
   ]
 
+  expenses = [
+
+    {
+      supplier: "Rent",
+      value: 5000,
+      due_date: "2017/12/14",
+      seller_id: 1
+    },
+
+    {
+      supplier: "Supplier 1",
+      value: 7000,
+      due_date: "2017/12/18",
+      seller_id: 1
+    },
+
+    {
+      supplier: "Utilities",
+      value: 3000,
+      due_date: "2017/12/09",
+      seller_id: 1
+    },
+
+    {
+      supplier: "Supplier 2",
+      value: 1000,
+      due_date: "2017/12/20",
+      seller_id: 1
+    },
+
+    {
+      supplier: "Wages",
+      value: 12000,
+      due_date: "2017/12/14",
+      seller_id: 1
+    },
+
+    {
+      supplier: "Taxes",
+      value: 4000,
+      due_date: "2017/12/22",
+      seller_id: 1
+    },
+
+    {
+      supplier: "Supplier 3",
+      value: 9000,
+      due_date: "2017/12/27",
+      seller_id: 1
+    },
+
+
+  ]
+
   sellers.each do |seller|
     puts "Criando seller cidade: #{seller[:city]}"
     sel = Seller.new(seller)
@@ -140,6 +196,11 @@ invoice_payers = [
   users.each do |user|
     puts "Criando user cidade: #{user[:name]}"
     User.create(user)
+  end
+
+  expenses.each do |expense|
+    puts "Criando expense supplier: #{expense[:supplier]}"
+    Expense.create(expense)
   end
 
 

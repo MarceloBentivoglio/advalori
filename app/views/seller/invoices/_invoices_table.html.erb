@@ -1,6 +1,8 @@
 <div class="container">
   <div class="col-lg-12">
-    <h3 class="chart-title"><%= invoices.first.status %> Invoices</h3>
+    <% if invoices.any? %>
+      <h3 class="chart-title"><%= invoices.first.status %> Invoices</h3>
+    <% end %>
   </div>
   <table class="table expense-table" id="table-invoices">
     <thead>
@@ -11,7 +13,7 @@
         <th class="nowrap">Invoice Amount</th>
         <th>Due date</th>
         <th>Status</th>
-        <% if invoices.first.status == 'Sold' %>
+        <% if invoices.any? && invoices.first.status == 'Sold' %>
           <th>Fee</th>
         <% end %>
       </tr>
