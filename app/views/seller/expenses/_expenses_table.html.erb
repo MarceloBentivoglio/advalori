@@ -8,24 +8,30 @@
         <th scope="col">Expense</th>
         <th scope="col">Value</th>
         <th scope="col" colspan=2>Due Date</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
       <% expenses.each do |expense| %>
-        <tr>
-          <th scope="row"><%= expense.id %></th>
-          <td><%= expense.supplier %></td>
-          <td><%= expense.value %></td>
-          <td><%= expense.due_date.strftime('%d %b, %Y') %></td>
-          <td>
-            <%= link_to(seller_expenses_path, class: "") do %>
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-            <% end %>
-            <%= link_to(seller_expenses_path, class: "") do %>
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            <% end %>
-           </td>
-        </tr>
+      <tr>
+        <th scope="row"><%= expense.id %></th>
+        <td><%= expense.supplier %></td>
+        <td>R$ <%= expense.value%></td>
+        <td><%= expense.due_date.strftime('%d %b, %Y') %></td>
+        <td>
+        </td>
+        <td>
+          <%= link_to(edit_seller_expense_path(expense), class: "") do %>
+          <i class="fa fa-pencil-square-o"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to(seller_expense_path(expense), class: "", method: :delete, "data-confirm" => "Are you sure?" ) do %>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+          <% end %>
+        </td>
+      </tr>
       <% end %>
       <tr>
         <td colspan=6>
