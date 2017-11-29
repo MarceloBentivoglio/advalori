@@ -53,12 +53,12 @@
 
               <td class='installment'><%= installment.number  %></td>
 
-              <td>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span>
+              <td class='installment'>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span>
               </td>
 
               <td class='installment'><%= installment.due_date.strftime('%d/%m/%Y') %></td>
 
-              <td><%= invoice.status %></td>
+              <td class='installment'><%= invoice.status %></td>
 
               <td></td>
 
