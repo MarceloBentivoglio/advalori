@@ -32,7 +32,6 @@ $(document).ready(function() {
   $('#phone').mask('(00) 0000-0000');
   $('#zip_code').mask('00000-000');
   $('#money').mask("#.##0,00", {reverse: true});
-  // $('#money').maskMoney({thousands:'.', decimal:',', allowZero:true, precision: 2});
   $('#cpf').mask('000.000.000-00', {reverse: true});
 
   $('#submit-expense').click(function(){

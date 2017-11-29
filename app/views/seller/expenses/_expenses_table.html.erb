@@ -17,7 +17,7 @@
       <tr>
         <th scope="row"><%= expense.id %></th>
         <td><%= expense.supplier %></td>
-        <td>R$ <%= expense.value%></td>
+        <td>R$ <span id='money'><%= "#{'%.02f' % expense.value}" %></span></td>
         <td><%= expense.due_date.strftime('%d %b, %Y') %></td>
         <td>
         </td>
