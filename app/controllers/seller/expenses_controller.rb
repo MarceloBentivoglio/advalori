@@ -24,14 +24,21 @@ class Seller::ExpensesController < ApplicationController
     end
   end
 
-
+  def edit
+    @expense = Expense.find(params[:id])
+  end
 
   def update
-    if expense.update(expense_params)
-    end
+    @expense = Expense.find(params[:id])
+    @expense.update(expense_params)
+    redirect_to seller_expenses_path
+    success_message
   end
 
   def destroy
+    @expense = Expense.find(params[:id])
+    @expense.destroy
+    redirect_to seller_expenses_path
   end
 
   private
@@ -47,4 +54,9 @@ class Seller::ExpensesController < ApplicationController
   def expenses
     current_user.seller.expenses
   end
+
+  def success_message
+    flash[:notice] = "Your profile has been successfully updated"
+  end
+
 end

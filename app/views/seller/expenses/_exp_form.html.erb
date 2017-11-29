@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 
-    <%= simple_form_for @expense, url: seller_expenses_path do |f| %>
+    <%= simple_form_for [:seller, @expense] do |f| %>
       <%= f.input :supplier %>
-      <%= f.input :value %>
+      <%= f.input :value, as: :string, input_html:{ id:"money"} %>
       <%= f.input :due_date, as: :date %>
       <%= f.submit "Add Expense", class: "btn-expense" %>
     <% end %>
