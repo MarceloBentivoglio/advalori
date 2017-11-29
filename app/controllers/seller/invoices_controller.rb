@@ -2,6 +2,7 @@ class Seller::InvoicesController < ApplicationController
   def index
     @invoice = Invoice.new
     @invoices_available = invoices.where(status: 'Available')
+    @invoices_not_available = invoices.where(status: 'Not Available')
     @invoices_sold = invoices.where(status: 'Sold')
     @installments = Installment.all
   end
@@ -32,6 +33,13 @@ class Seller::InvoicesController < ApplicationController
 
   def show
 
+  end
+
+  def update
+    invoice = Invoice.find(params[:id])
+    invoice.update(status: "Available")
+
+    redirect_to seller_invoices_path
   end
 
   def destroy

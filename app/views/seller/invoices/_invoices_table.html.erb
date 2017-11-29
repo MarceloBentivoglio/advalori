@@ -22,43 +22,68 @@
       <% invoices.each do |invoice| %>
       <tr class="tr-highlight-overdue" id="c-<%= invoice.id %>">
         <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
+
         <td><%= invoice.number  %></td>
+
         <td><%= invoice.installments.count  %></td>
+
         <td>R$ <span id='money'><%= "#{'%.02f' % invoice.total_value}" %></span>
         </td>
+
         <% if invoice.installments.count > 1 %>
 
-        <td><%= link_to "Details", '#', class: 'install-details' %></td>
-        <td><%= invoice.status %></td>
-        <td>
-          <%= link_to(seller_invoice_path(invoice), class: "", method: :delete) do %>
-          <i class="fa fa-trash" aria-hidden="true"></i>
-          <% end %>
-        </td>
+          <td><%= link_to "Details", '#', class: 'install-details' %></td>
 
-        <% invoice.installments.each do |installment| %>
-        <tr class='tr-install tr-hide' id="c-<%= invoice.id %>">
-          <td></td>
-          <td></td>
-          <td class='installment'><%= installment.number  %></td>
-          <td>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span>
-          </td>
-          <td class='installment'><%= installment.due_date  %></td>
           <td><%= invoice.status %></td>
-          <td></td>
-        </tr>
-        <% end %>
-        <% else %>
-        <td class='nowrap'><%= invoice.installments.first.due_date %></td>
-        <td><%= invoice.status %></td>
-        <% if invoice.status == 'Sold' %>
-        <td>5%</td>
-        <% end %>
-        <td colspan=2>
-          <%= link_to(seller_invoice_path(invoice), method: :delete) do %>
-          <i class="fa fa-trash" aria-hidden="true"></i>
+
+          <% if invoice.status == 'Not Available' %>
+            <td><%= link_to "Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-success" %></td>
           <% end %>
-        </td>
+          <td>
+            <%= link_to(seller_invoice_path(invoice), class: "", method: :delete) do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <% end %>
+          </td>
+
+
+          <% invoice.installments.each do |installment| %>
+            <tr class='tr-install tr-hide' id="c-<%= invoice.id %>">
+              <td></td>
+
+              <td></td>
+
+              <td class='installment'><%= installment.number  %></td>
+
+              <td>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span>
+              </td>
+
+              <td class='installment'><%= installment.due_date  %></td>
+
+              <td><%= invoice.status %></td>
+
+              <td></td>
+
+            </tr>
+          <% end %>
+        <% else %>
+          <td class='nowrap'><%= invoice.installments.first.due_date %></td>
+
+          <td><%= invoice.status %></td>
+
+          <% if invoice.status == 'Sold' %>
+            <td>5%</td>
+
+          <% end %>
+          <% if invoice.status == 'Not Available' %>
+            <td><%= link_to "Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-success" %></td>
+          <% end %>
+
+          <td colspan=2>
+            <%= link_to(seller_invoice_path(invoice), method: :delete) do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <% end %>
+          </td>
+
         <% end %>
       </tr>
       <% end %>
@@ -67,6 +92,7 @@
         <td colspan=7>
           <%= render 'shared/add_invoice_modal' %>
         </td>
+
       </tr>
     </tbody>
   </table>
