@@ -1,11 +1,11 @@
 <div class="container">
-  <h3>Sold Invoices</h3 >
+  <h3 class="chart-title">Sold Invoices</h3 >
   <%= render 'seller/invoices/invoices_table', invoices: @invoices_sold %>
-  <h3>Available Invoices</h3 >
+  <h3 class="chart-title">Available Invoices</h3 >
   <%= render 'seller/invoices/invoices_table', invoices: @invoices_available %>
-  <h3>Next Expenses</h3 >
+  <h3 class="chart-title">Next Expenses</h3 >
   <%= render 'seller/expenses/expenses_table', expenses: @expenses %>
-  <h3>Cash Flow</h3 >
+  <h3 class="chart-title">Cash Flow</h3 >
   <%= render 'seller/expenses/graphy_table', expenses: @expenses %>
 
 </div>

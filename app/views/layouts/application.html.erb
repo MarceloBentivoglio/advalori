@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Advalori</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Advalori</title>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+</head>
+<body>
 
-    <%= javascript_include_tag 'application' %>
-    <%= render 'shared/flashes' %>
-    <%= render 'shared/navbarlateral' %>
-    <div class="body-content">
-      <%= render 'shared/dashnavbar' %>
-      <%= yield %>
+  <%= javascript_include_tag 'application' %>
+  <%= render 'shared/flashes' %>
+  <%= render 'shared/navbarlateral' %>
+
+  <div class="body-content">
+    <%= render 'shared/dashnavbar' %>
+    <%= yield %>
+    <div class="">
       <%= render 'shared/footerdashboard' %>
     </div>
+  </div>
 
-    <%= yield(:js)  %>
-    <%= cloudinary_js_config %>
 
-  </body>
+  <%= yield(:js)  %>
+  <%= cloudinary_js_config %>
+
+</body>
 </html>
