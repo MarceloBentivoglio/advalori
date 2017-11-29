@@ -77,3 +77,37 @@
   opacity: 1 !important;
   font-weight: 400 !important;
 }
+
+.btn-cancel-sell, .btn-cancell-sell:link {
+  padding: 5px 3px;
+  border: 1px solid #9B1D20;
+  color: #9B1D20;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 3px;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    background-color: #9B1D20;
+    color: #fff;
+    text-decoration: none !important;
+  }
+}
+
+.btn-sell, .btn-sell:link {
+  padding: 5px 3px;
+  border: 1px solid #259B25;
+  color: #259B25;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 3px;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    background-color: #259B25;
+    color: #fff;
+    text-decoration: none !important;
+  }
+}

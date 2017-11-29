@@ -75,10 +75,10 @@
 
           <% end %>
           <% if invoice.status == 'Not Available' %>
-            <td><%= link_to "Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-success btn-invoice-status" %></td>
+            <td><%= link_to "Sell Invoice", seller_invoice_path(invoice), method: :patch, class: "btn-sell" %></td>
           <% end %>
           <% if invoice.status == 'Available' %>
-            <td><%= link_to "Não Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-primary btn-invoice-status" %></td>
+            <td><%= link_to "Cancel Sell", seller_invoice_path(invoice), method: :patch, class: "btn-cancel-sell" %></td>
           <% end %>
 
           <td colspan=2>
