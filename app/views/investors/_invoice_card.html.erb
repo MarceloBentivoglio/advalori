@@ -1,15 +1,16 @@
-<div class="card">
+<div class="card-invoice">
+    <div class="card-category-invoice">Available</div>
+    <div class="card-description-invoice">
+      <h2><i class="fa fa-exchange"></i>  <%= invoice.seller.name %></h2>
+      <h2><i class="fa fa-money"></i>  <%= invoice.invoice_payer.name %></h2>
+      <div class="card-info-invoice">
+        <p>Invoice</p> &nbsp <p class="I"><%= invoice.number %></p>&nbsp <p>total value of</p> &nbsp <p class="I">R$ <%= invoice.total_value %></p> &nbsp<p> sugested monthly fee</p>&nbsp <p class="I">5%</p>
+      </div>
+    </div>
+
   <%= link_to investor_invoice_path(invoice) do %>
-    <div class="card-top">
-      <p class="card-text justify-content-center align-items-center">Seller: <%= invoice.seller.name %></p>
-      <p class="card-text justify-content-center align-items-center">Payer: <%= invoice.invoice_payer.name %></p>
-    </div>
-    <div class="card-bottom">
-      <p class="card-text justify-content-center align-items-center">Total Value: R$<%= invoice.total_value %></p>
-      <p class="card-text justify-content-center align-items-center">Invoice Number: <%= invoice.number %></p>
-    </div>
-    <div class="card-button text-center">
-      <p class="btn btn-success" >Comprar</p>
+    <div class="card-button-invoice text-center">
+      <p class="btn-buy-invoice">Buy Invoice</p>
     </div>
   <% end %>
 </div>

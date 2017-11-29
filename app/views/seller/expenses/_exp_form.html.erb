@@ -3,9 +3,9 @@
 
     <%= simple_form_for [:seller, @expense] do |f| %>
       <%= f.input :supplier %>
-      <%= f.input :value, as: :string, input_html:{ id:"money"} %>
+      <%= f.input :value, as: :string, input_html:{ id:"money", value: "#{'%.02f' % @expense.value}"} %>
       <%= f.input :due_date, as: :date %>
-      <%= f.submit "Add Expense", class: "btn-expense" %>
+      <%= f.submit "Add Expense", class: "btn-expense", id: 'submit-expense' %>
     <% end %>
 
   </div>

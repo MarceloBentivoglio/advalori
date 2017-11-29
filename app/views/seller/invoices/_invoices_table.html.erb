@@ -1,6 +1,8 @@
 <div class="container">
   <div class="col-lg-12">
-    <h3 class="chart-title"><%= invoices.first.status %> Invoices</h3>
+    <% if invoices.any? %>
+      <h3 class="chart-title"><%= invoices.first.status %> Invoices</h3>
+    <% end %>
   </div>
   <table class="table expense-table" id="table-invoices">
     <thead>
@@ -11,7 +13,7 @@
         <th class="nowrap">Invoice Amount</th>
         <th>Due date</th>
         <th>Status</th>
-        <% if invoices.first.status == 'Sold' %>
+        <% if invoices.any? && invoices.first.status == 'Sold' %>
           <th>Fee</th>
         <% end %>
       </tr>
@@ -22,8 +24,8 @@
         <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
         <td><%= invoice.number  %></td>
         <td><%= invoice.installments.count  %></td>
-        <td class='nowrap'>R$ <%= invoice.total_value %></td>
-
+        <td>R$ <span id='money'><%= "#{'%.02f' % invoice.total_value}" %></span>
+        </td>
         <% if invoice.installments.count > 1 %>
 
         <td><%= link_to "Details", '#', class: 'install-details' %></td>
@@ -39,20 +41,18 @@
           <td></td>
           <td></td>
           <td class='installment'><%= installment.number  %></td>
-          <td class='installment nowrap'>R$ <%= installment.value  %></td>
+          <td>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span>
+          </td>
           <td class='installment'><%= installment.due_date  %></td>
           <td><%= invoice.status %></td>
-
           <td></td>
         </tr>
         <% end %>
-
         <% else %>
-
         <td class='nowrap'><%= invoice.installments.first.due_date %></td>
         <td><%= invoice.status %></td>
         <% if invoice.status == 'Sold' %>
-          <td>5%</td>
+        <td>5%</td>
         <% end %>
         <td colspan=2>
           <%= link_to(seller_invoice_path(invoice), method: :delete) do %>
