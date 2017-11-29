@@ -1,21 +1,12 @@
 .card-invoice {
   margin-top: 15px;
   height: 200px;
-  background-size: cover !important;
-  background-position: center;
   color: #070707;
   position: relative;
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
 }
-.card-user-invoice {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
-  border-radius: 50%;
-}
+
 .card-category-invoice {
   position: absolute;
   top: 10px;
@@ -40,6 +31,7 @@
   text-align: left;
   opacity: 0.5;
 }
+
 .card-button-invoice {
   position: absolute;
   bottom: 10px;
