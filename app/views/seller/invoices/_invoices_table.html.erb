@@ -1,8 +1,4 @@
-<div class="container">
   <div class="col-lg-12">
-    <% if invoices.any? %>
-      <h3 class="chart-title"><%= invoices.first.status %> Invoices</h3>
-    <% end %>
   </div>
   <table class="table expense-table" id="table-invoices">
     <thead>
@@ -37,7 +33,10 @@
           <td><%= invoice.status %></td>
 
           <% if invoice.status == 'Not Available' %>
-            <td><%= link_to "Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-success" %></td>
+            <td><%= link_to "Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-success btn-invoice-status" %></td>
+          <% end %>
+          <% if invoice.status == 'Available' %>
+            <td><%= link_to "Não Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-primary btn-invoice-status" %></td>
           <% end %>
           <td>
             <%= link_to(seller_invoice_path(invoice), class: "", method: :delete) do %>
@@ -75,7 +74,10 @@
 
           <% end %>
           <% if invoice.status == 'Not Available' %>
-            <td><%= link_to "Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-success" %></td>
+            <td><%= link_to "Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-success btn-invoice-status" %></td>
+          <% end %>
+          <% if invoice.status == 'Available' %>
+            <td><%= link_to "Não Vender", seller_invoice_path(invoice), method: :patch, class: "btn btn-primary btn-invoice-status" %></td>
           <% end %>
 
           <td colspan=2>
@@ -96,5 +98,4 @@
       </tr>
     </tbody>
   </table>
-</div>
 

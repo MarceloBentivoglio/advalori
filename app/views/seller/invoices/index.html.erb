@@ -1,6 +1,11 @@
-<!-- <div class="container"> -->
+<div class="container">
+
+  <h3 class="chart-title">Sold Invoices</h3>
   <%= render 'seller/invoices/invoices_table', invoices: @invoices_sold %>
+  <h3 class="chart-title">Available Invoices</h3>
   <%= render 'seller/invoices/invoices_table', invoices: @invoices_available %>
+  <h3 class="chart-title">Not Available Invoices</h3>
   <%= render 'seller/invoices/invoices_table', invoices: @invoices_not_available %>
   <%= render 'seller/invoices/incomes_graph' %>
-<!-- </div> -->
+
+</div>
