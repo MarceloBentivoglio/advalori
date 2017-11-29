@@ -23,6 +23,13 @@ class ChartsController < ApplicationController
     render json: accumulate(daily_cash_balance)
   end
 
+  def incomes_chart
+    render json: Installment.joins(:invoice).where("invoices.seller_id" => current_user.seller)
+                  .where('due_date > ?', DateTime.now)
+                  .group_by_day(:due_date)
+                  .sum("value")
+  end
+
   private
 
     def accumulate(daily_balances)
