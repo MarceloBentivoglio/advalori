@@ -1,44 +1,28 @@
-<div class="container text-center">
+<div class="card-detailed">
 
-  <h1>Invoice Details</h1>
+  <div class="card-title">
 
-  <br>
-
-  <h4>Invoice Number: <%= @invoice.number %></h4>
-  <h4>Total Value: R$ <%= @invoice.total_value %></h4>
-  <p>Invoice's Status: <%= @invoice.status %></p>
-  <p>Invoice's Seller: <%= @invoice.seller.name %></p>
-  <p>Invoice's Payer: <%= @invoice.invoice_payer.name %></p>
-
-  <br>
-
-  <h4>Installments Details</h4>
-  <br>
-
-  <div class="row">
-
-    <% @invoice.installments.each do |installment| %>
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-      <div class="card">
-
-        <p>Reference Number: <%= installment.number  %></p>
-        <p>Value: R$ <%= installment.value  %></p>
-        <p>Due Date: <%= installment.due_date  %></p>
-
-      </div>
+    <div class="card-title-left">
+      <p><%= @invoice.invoice_payer.name %></p>
+      <i class="fa fa-money" aria-hidden="true"></i>
+      <p>Invoice's Payer</p>
     </div>
-    <% end %>
+
+    <div class="card-title-right">
+      <p><%= @invoice.seller.name %></p>
+      <i class="fa fa-exchange" aria-hidden="true"></i>
+      <p>Invoice's Seller</p>
+    </div>
+
   </div>
 
-  <br>
-
-    <% if @invoice.status == "Available" %>
-    <%= button_to "Comprar", investor_invoice_orders_path(@invoice), class: "btn btn-primary" %>
-    <% elsif %>
-    <%= link_to 'This Invoice is not Available', investor_path, class: "btn btn-danger" %>
-    <% end %>
-
-
-
+  <div class="card-body">
+    <p>Installments for invoice <%= @invoice.number %> </p>
+    <%= render 'detailed_table', installments: @invoice.installments %>
+  </div>
 
 </div>
+
+<%= button_to "Comprar", investor_invoice_orders_path(@invoice), class: "btn btn-primary" %>
+
+
