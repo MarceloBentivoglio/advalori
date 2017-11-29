@@ -56,6 +56,7 @@
               <td class='installment'>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span>
               </td>
 
+
               <td class='installment'><%= installment.due_date.strftime('%d/%m/%Y') %></td>
 
               <td class='installment'><%= invoice.status %></td>
