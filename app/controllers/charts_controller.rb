@@ -13,7 +13,7 @@ class ChartsController < ApplicationController
     # Installments should be grouped by day
     installments = Installment.joins(:invoice).where("invoices.seller_id" => current_user.seller).where('due_date > ?', DateTime.now).group_by_day(:due_date).sum("value")
 
-    last_date = [expenses.keys.max, installments.keys.max].max
+    last_date = [expenses.keys.max, installments.keys.max].compact.max
     period = (Date.current..last_date).map {|date| [date, 0] }.to_h
 
     # Merge daily expenses + intallments
