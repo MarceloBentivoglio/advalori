@@ -38,7 +38,9 @@
           <% if invoice.status == 'Available' %>
             <td><%= link_to "Cancel Sell", seller_invoice_path(invoice), method: :patch, class: "btn-cancel-sell" %></td>
           <% end %>
-          <td>5%</td>
+          <% if invoice.status == 'Sold' %>
+            <td>5%</td>
+          <% end %>
           <td>
             <%= link_to(seller_invoice_path(invoice), class: "", method: :delete) do %>
               <i class="fa fa-trash" aria-hidden="true"></i>
