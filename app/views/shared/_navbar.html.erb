@@ -1,7 +1,7 @@
 <div class="navbar-wagon navbar-fixed-top navbar-scroll">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logomarca.png" %>
+  <%= image_tag "logomarca.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -9,69 +9,64 @@
 
     <% if user_signed_in? %>
 
-      <!-- Links when logged in -->
-      <% if current_user.is_seller? %>
-        <%= link_to seller_path do %>
-          <%= t(".profile", default: "Go To Dashboard") %>
-        <i class="fa fa-ravelry"></i>
-        <% end %>
-      <% else %>
-        <%= link_to investor_path do %>
-          <%= t(".profile", default: "Go To Dashboard") %>
-        <i class="fa fa-ravelry"></i>
-        <% end %>
-      <% end %>
-
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-           <li>
-              <%= link_to edit_user_registration_path do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to root_path do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% else %>
-
-      <!-- Login link (when logged out) -->
-
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a class="page-scroll" href="#page-top">Home</a></li>
-            <li><a class="page-scroll" href="#factoring-wrapper">Solution</a></li>
-            <li><a class="page-scroll" href="#process">Process</a></li>
-            <li><a class="page-scroll" href="#team">Team &amp; Partners</a></li>
-            <li><a class="page-scroll" href="#contact">Contact</a></li>
-            <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path %></li>
-          </ul>
-          <% content_for(:js) do %>
-            <script>
-              $(function() {
-                $(".page-scroll").click(function(event) {
-                  event.preventDefault();
-
-                  var link = this;
-                  var section = $(link.hash);
-                  var sectionTop = section.offset().top;
-                  var navbarHeight = $(".navbar-wagon").height();
-                  $("html").animate({ scrollTop: sectionTop - navbarHeight });
-                });
-              });
-            </script>
-          <% end %>
+    <!-- Links when logged in -->
+    <% if current_user.is_seller? %>
+    <%= link_to seller_path do %>
+    <%= t(".profile", default: "Go To Dashboard") %>
+    <i class="fa fa-ravelry"></i>
     <% end %>
+    <% else %>
+    <%= link_to investor_path do %>
+    <%= t(".profile", default: "Go To Dashboard") %>
+    <i class="fa fa-ravelry"></i>
+    <% end %>
+    <% end %>
+
+    <!-- Avatar with dropdown menu -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <%= image_tag "http://res.cloudinary.com/mbentivoglio/image/upload/v1511986333/user-icon_uy1imd.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+         <li>
+          <%= link_to edit_user_registration_path do %>
+          <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to root_path do %>
+          <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
   </div>
+  <% else %>
+
+  <!-- Login link (when logged out) -->
+
+  <ul class="nav navbar-nav navbar-right">
+    <li> <%= link_to t(".sign_in", default: "Login"), new_user_session_path %></li>
+  </ul>
+  <% content_for(:js) do %>
+  <script>
+    $(function() {
+      $(".page-scroll").click(function(event) {
+        event.preventDefault();
+
+        var link = this;
+        var section = $(link.hash);
+        var sectionTop = section.offset().top;
+        var navbarHeight = $(".navbar-wagon").height();
+        $("html").animate({ scrollTop: sectionTop - navbarHeight });
+      });
+    });
+  </script>
+  <% end %>
+  <% end %>
+</div>
 </div>
