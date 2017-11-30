@@ -17,7 +17,7 @@ Expense.destroy_all
 invoice_payers = [
   {
     cnpj: "45543915037697",
-    name: "CARREFOUR COMERCIO E INDUSTRIA LTDA",
+    name: "CARREFOUR LTDA",
     address: "Avenida Engenheiro George Corbisier",
     address_number: "273",
     phone_number:"1137796891",
@@ -27,9 +27,36 @@ invoice_payers = [
     city:"Sao Paulo",
     seller_id: 1
     },
+
+    {
+    cnpj: "87426038000109",
+    name: "Richard Eli Refrigerantes LTDA",
+    address: "Avenida Engenheiro George Corbisier",
+    address_number: "273",
+    phone_number:"1137796891",
+    state:"SP",
+    zip_code: "04345000",
+    neighborhood: "Jabaquara",
+    city:"Sao Paulo",
+    seller_id: 3
+    },
+
+    {
+    cnpj: "83998035000199",
+    name: "Alfons Joaquim Mercado LTDA.",
+    address: "Avenida Engenheiro George Corbisier",
+    address_number: "273",
+    phone_number:"1137796891",
+    state:"SP",
+    zip_code: "04345000",
+    neighborhood: "Jabaquara",
+    city:"Sao Paulo",
+    seller_id: 4
+    },
+
     {
       cnpj: "07740586000170",
-      name: "ORTHOMETRIC IND. E COM. DE PROD.MEDICOS E ODONT.",
+      name: "ORTHOMETRIC PROD.MEDICOS",
       address: "RUA IRINEU MARTINS",
       address_number: "280",
       phone_number:"1433112726",
@@ -37,18 +64,18 @@ invoice_payers = [
       zip_code: "17539059",
       neighborhood: "Jose Ferreira da Costa Jr",
       city:"Marilia",
-      seller_id: 1
+      seller_id: 4
     },
 
     {
-      cnpj: "01234567891011",
-      name: "LE WAGON",
-      address: "RUA MOURATO COELHO",
-      address_number: "280",
-      phone_number:"1433112726",
+      cnpj: "11109876543210",
+      name: "SAMSUNG",
+      address: "AV PAULISTA",
+      address_number: "100",
+      phone_number:"1190112726",
       state:"SP",
       zip_code: "17539059",
-      neighborhood: "Jose Ferreira da Costa Jr",
+      neighborhood: "Bela Vista",
       city:"São Paulo",
       seller_id: 1
     },
@@ -63,22 +90,77 @@ invoice_payers = [
       zip_code: "17539059",
       neighborhood: "Bela Vista",
       city:"São Paulo",
-      seller_id: 1
+      seller_id: 2
+    },
+
+    {
+      cnpj: "11109876543210",
+      name: "SAMSUNG",
+      address: "AV PAULISTA",
+      address_number: "100",
+      phone_number:"1190112726",
+      state:"SP",
+      zip_code: "17539059",
+      neighborhood: "Bela Vista",
+      city:"São Paulo",
+      seller_id: 3
     }
 
   ]
 
   sellers = [
     {
-      cnpj: "48935902000146",
-      name: "SCHOELLER DO BRASIL COMERCIO E REPRESENTACOES LTDA",
+      cnpj: "60622358000188",
+      name: "Le Wagon Bootcamp",
       address: "Rua Afonso Braz",
       address_number: "579",
-      address_complement:"Cj. 86",
+      address_complement:"Cj 86",
       phone_number:"1130442151",
       state:"SP",
       zip_code: "04511011",
-      neighborhood: "Vila Nova Conceicao",
+      neighborhood: "Vila Madalena",
+      city:"Sao Paulo",
+      number_of_employees: 42
+    },
+    {
+      cnpj: "16375442000152",
+      name: "Apple Awesome Computers",
+      address: "Rua Afonso Braz",
+      address_number: "579",
+      address_complement:"Cj 86",
+      phone_number:"1130442151",
+      state:"SP",
+      zip_code: "04511011",
+      neighborhood: "Itaim",
+      city:"Sao Paulo",
+      number_of_employees: 42
+    },
+
+
+    {
+      cnpj: "71676236000190",
+      name: "Coca Cola Company",
+      address: "Rua Afonso Braz",
+      address_number: "579",
+      address_complement:"Cj 86",
+      phone_number:"1130442151",
+      state:"SP",
+      zip_code: "04511011",
+      neighborhood: "Vila Olimpia",
+      city:"Sao Paulo",
+      number_of_employees: 42
+    },
+
+    {
+      cnpj: "56568759000120",
+      name: "Google Company Inc",
+      address: "Rua Afonso Braz",
+      address_number: "579",
+      address_complement:"Cj 86",
+      phone_number:"1130442151",
+      state:"SP",
+      zip_code: "04511011",
+      neighborhood: "Itaim",
       city:"Sao Paulo",
       number_of_employees: 42
     }
@@ -87,7 +169,7 @@ invoice_payers = [
   investors = [
     {
       cnpj: "123456789",
-      name: "FACTORING 1 LTDA",
+      name: "FACTORING LTDA",
       address: "Rua Mourato Coelho",
       address_number: "123",
       address_complement:"",
@@ -101,9 +183,9 @@ invoice_payers = [
 
   users = [
     {
-      email: "user1@email.com",
+      email: "seller@email.com",
       password: "123123",
-      name: "User 1 Seller",
+      name: "Seller",
       cpf: 99999999999,
       phone_number: 11999999999,
       seller_id: 1,
@@ -112,9 +194,42 @@ invoice_payers = [
     },
 
     {
-      email: "user2@email.com",
+      email: "seller2@email.com",
       password: "123123",
-      name: "User 2 Investor",
+      name: "Seller 2",
+      cpf: 99999999999,
+      phone_number: 11999999999,
+      seller_id: 2,
+      investor_id: nil,
+      is_seller: true
+    },
+
+    {
+      email: "seller3@email.com",
+      password: "123123",
+      name: "Seller 3",
+      cpf: 99999999999,
+      phone_number: 11999999999,
+      seller_id: 3,
+      investor_id: nil,
+      is_seller: true
+    },
+
+    {
+      email: "seller4@email.com",
+      password: "123123",
+      name: "Seller 4",
+      cpf: 99999999999,
+      phone_number: 11999999999,
+      seller_id: 4,
+      investor_id: nil,
+      is_seller: true
+    },
+
+    {
+      email: "investor@email.com",
+      password: "123123",
+      name: "Investor",
       cpf: 99999999999,
       phone_number: 11999999999,
       seller_id: nil,
