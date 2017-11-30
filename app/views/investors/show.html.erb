@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
+
+
     <% @invoices.each do |invoice| %>
-      <div class="col-xs-12">
-        <%= render 'invoice_card', invoice: invoice %>
-      </div>
+    <div class="col-xs-12">
+      <%= render 'invoice_card', invoice: invoice %>
+    </div>
     <% end %>
   </div>
 </div>

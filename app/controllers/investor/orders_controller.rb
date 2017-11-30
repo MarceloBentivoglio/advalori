@@ -15,7 +15,10 @@ class Investor::OrdersController < ApplicationController
     @order.fee = 0.95
     @order.save
 
-    invoice.update(status: 'Sold')
+    invoice.update!(status: 'Sold')
+    invoice.installments.each do |installment|
+      installment.update! due_date: 1.day.from_now
+    end
     redirect_to investor_orders_path
 
   end
