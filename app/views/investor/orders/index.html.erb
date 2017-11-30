@@ -17,7 +17,7 @@
           <tr>
             <th scope="row"><%= order.id %></th>
             <td><%= order.invoice.total_value %></td>
-            <td><%= order.fee %></td>
+            <td><%= order.fee %>%</td>
             <td><%= capitalize_words(order.invoice.seller.name) %></td>
             <td><%= capitalize_words(order.invoice.invoice_payer.name) %></td>
           </tr>
