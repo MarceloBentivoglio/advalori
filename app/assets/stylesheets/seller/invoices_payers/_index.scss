@@ -1,4 +1,6 @@
-.container-invoices-payer {
+.container-for-tables {
   width: 99%;
-  margin-left: 10px;
+  // margin-left: 10px;
+  display: table;
+  min-height: calc(100vh - 100px);
 }

@@ -1,20 +1,23 @@
-<div class="card-invoice-w-table ">
+<div class="container container-for-tables">
+  <div class="row">
+    <div class="card-invoice-w-table ">
 
-  <div class="card-description-invoice-w-table">
-      <h2><i class="fa fa-exchange"></i>  <%= capitalize_words(@invoice.seller.name) %></h2>
-      <h2><i class="fa fa-money"></i>  <%= capitalize_words(@invoice.invoice_payer.name) %></h2>
-  </div>
+      <div class="card-description-invoice-w-table">
+          <h2><i class="fa fa-exchange"></i>  <%= capitalize_words(@invoice.seller.name) %></h2>
+          <h2><i class="fa fa-money"></i>  <%= capitalize_words(@invoice.invoice_payer.name) %></h2>
+      </div>
 
-  <div class="card-table-invoice-w-table">
-    <h3 class="chart-title">Installments for invoice <%= @invoice.number %> </h3>
-    <%= render 'detailed_table', installments: @invoice.installments %>
-  </div>
+      <div class="card-table-invoice-w-table">
+        <h3 class="chart-title">Installments for invoice <%= @invoice.number %> </h3>
+        <%= render 'detailed_table', installments: @invoice.installments %>
+      </div>
 
-  <div class="card-footer-invoice-w-table">
-    <div>
-      <%= link_to "Buy Invoice", investor_invoice_orders_path(@invoice),method: :post, class: "card-button-invoice-w-table text-center btn-buy-invoice" %>
+      <div class="card-footer-invoice-w-table">
+        <div>
+          <%= link_to "Buy Invoice", investor_invoice_orders_path(@invoice),method: :post, class: "card-button-invoice-w-table text-center btn-buy-invoice" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
 
