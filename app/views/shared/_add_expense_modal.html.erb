@@ -13,27 +13,32 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for @expense, url: seller_expenses_path do |f| %>
-        <%= f.error_notification %>
-
-        <div class="form-inputs">
-         <%= f.input :supplier %>
-         <%= f.input :value, as: :string, input_html:{ id:"money"} %>
-         <%= f.input :due_date, as: :date %>
-       </div>
-       <div class="form-actions">
-        <%= f.submit nil, :class => 'btn btn-primary' %>
-        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-        new_seller_expense_path, :class => 'btn' %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.input :supplier %>
+            <%= f.input :value, as: :string, input_html: { id: "money" } %>
+            <%= f.input :due_date, as: :date %>
+          </div>
+          <div class="form-actions">
+            <%= f.submit class: 'btn btn-primary', id: 'submit-expense' %>
+            <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            new_seller_expense_path, :class => 'btn' %>
+          </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
   </div>
 </div>
-</div>
 <% content_for(:js) do %>
-<%= javascript_tag do %>
-$('#modal-button').click(function() {
-$('#myModal').modal();
-});
-<% end %>
+  <%= javascript_tag do %>
+    $('#modal-button').click(function() {
+      $('#myModal').modal();
+    });
+
+    $('#money').mask("#.##0,00", {reverse: true});
+    $('#submit-expense').click(function(){
+      var moneyVal = $('#money').maskMoney('unmasked')[0]
+      $('#money').val(moneyVal)
+    })
+  <% end %>
 <% end %>
