@@ -1,4 +1,4 @@
-<div class="container container-for-tables">
+<div class="container container-for-cards">
   <div class="row">
     <div class="card-invoice-w-table ">
 
@@ -8,7 +8,12 @@
       </div>
 
       <div class="card-table-invoice-w-table">
-        <h3 class="chart-title">Installments for invoice <%= @invoice.number %> </h3>
+        <div class="card-info-invoice">
+          <h3 class="chart-title">Installments for invoice </h3> &nbsp
+          <p class="I"><%= @invoice.number %></p> &nbsp
+          <h3 class="chart-title"> sugested monthly fee</h3> &nbsp
+          <p class="I">5%</p>
+        </div>
         <%= render 'detailed_table', installments: @invoice.installments %>
       </div>
 

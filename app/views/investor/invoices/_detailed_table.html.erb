@@ -1,22 +1,20 @@
-<div class="container">
-  <table class="table expense-table" id="table-invoices">
-    <thead>
-      <tr>
-        <th>Reference Number</th>
-        <th class="nowrap">Value</th>
-        <th>Due date</th>
+<table class="table expense-table" id="table-invoices">
+  <thead>
+    <tr>
+      <th>Reference Number</th>
+      <th class="nowrap">Value</th>
+      <th>Due date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% installments.each do |installment| %>
+      <tr class="tr-highlight-overdue">
+        <td><%= installment.number  %></td>
+        <td>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span></td>
+        <td class='installment'><%= installment.due_date.strftime('%d/%m/%Y')  %></td>
       </tr>
-    </thead>
-    <tbody>
-      <% installments.each do |installment| %>
-        <tr class="tr-highlight-overdue">
-          <td><%= installment.number  %></td>
-          <td>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span></td>
-          <td class='installment'><%= installment.due_date.strftime('%d/%m/%Y')  %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+    <% end %>
+  </tbody>
+</table>
 
 
