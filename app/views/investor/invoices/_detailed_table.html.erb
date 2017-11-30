@@ -12,7 +12,7 @@
         <tr class="tr-highlight-overdue">
           <td><%= installment.number  %></td>
           <td>R$ <span id='money'><%= "#{'%.02f' % installment.value}" %></span></td>
-          <td class='installment'><%= installment.due_date  %></td>
+          <td class='installment'><%= installment.due_date.strftime('%d/%m/%Y')  %></td>
         </tr>
       <% end %>
     </tbody>

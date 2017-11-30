@@ -15,7 +15,7 @@
           <tbody>
             <% @invoices.each do |invoice| %>
             <tr class="tr-highlight-overdue">
-              <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
+              <td><%= capitalize_words(InvoicePayer.find_by(id: invoice.invoice_payer_id).name)  %></td>
               <td><%= invoice.number  %></td>
               <td><%= invoice.installments.count  %></td>
               <td>R$ <%= invoice.total_value %></td>
@@ -55,7 +55,7 @@
         <tbody>
           <% @invoices.each do |invoice| %>
           <tr class="tr-highlight-overdue">
-            <td><%= InvoicePayer.find_by(id: invoice.invoice_payer_id).name  %></td>
+            <td><%= capitalize_words(InvoicePayer.find_by(id: invoice.invoice_payer_id).name)  %></td>
             <td><%= invoice.number  %></td>
             <td><%= invoice.installments.count  %></td>
             <td>R$ <%= invoice.total_value %></td>
