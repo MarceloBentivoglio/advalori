@@ -13,7 +13,7 @@
     <% @sellers.each do |seller| %>
     <tr class="tr-highlight-overdue">
       <td><%= seller.cnpj %></td>
-      <td><%= seller.name %></td>
+      <td><%= capitalize_words(seller.name) %></td>
 
     </tr>
     <% end %>

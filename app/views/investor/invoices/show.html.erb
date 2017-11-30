@@ -1,8 +1,8 @@
 <div class="card-invoice-w-table ">
 
   <div class="card-description-invoice-w-table">
-      <h2><i class="fa fa-exchange"></i>  <%= @invoice.seller.name %></h2>
-      <h2><i class="fa fa-money"></i>  <%= @invoice.invoice_payer.name %></h2>
+      <h2><i class="fa fa-exchange"></i>  <%= capitalize_words(@invoice.seller.name) %></h2>
+      <h2><i class="fa fa-money"></i>  <%= capitalize_words(@invoice.invoice_payer.name) %></h2>
   </div>
 
   <div class="card-table-invoice-w-table">
@@ -12,15 +12,9 @@
 
   <div class="card-footer-invoice-w-table">
     <div>
-      <%= link_to "Buy Invoice", investor_invoice_orders_path(@invoice), class: "card-button-invoice-w-table text-center btn-buy-invoice" %>
+      <%= link_to "Buy Invoice", investor_invoice_orders_path(@invoice),method: :post, class: "card-button-invoice-w-table text-center btn-buy-invoice" %>
     </div>
   </div>
-
-
 </div>
-
-
-
-
 
 

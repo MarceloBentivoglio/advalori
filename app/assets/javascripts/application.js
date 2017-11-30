@@ -24,8 +24,15 @@ $(document).ready(function() {
       if ( $(el).attr('id') == trId ) {
         $(el).toggleClass('tr-hide')
 
+        if(!$(el).hasClass('tr-hide')) {
+          $(el).hide().fadeIn().removeClass('tr-hide');
+        }
+        else{
+         $(el).fadeOut();
+        }
+
       }
-    })
+    });
   })
 
   $('#cnpj').mask('00.000.000/0000-00');

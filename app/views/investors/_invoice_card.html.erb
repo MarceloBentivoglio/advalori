@@ -1,8 +1,8 @@
 <div class="card-invoice">
     <div class="card-category-invoice">Available</div>
     <div class="card-description-invoice">
-      <h2><i class="fa fa-exchange"></i>  <%= invoice.seller.name %></h2>
-      <h2><i class="fa fa-money"></i>  <%= invoice.invoice_payer.name %></h2>
+      <h2><i class="fa fa-exchange"></i>  <%= capitalize_words(invoice.seller.name) %></h2>
+      <h2><i class="fa fa-money"></i>  <%= capitalize_words(invoice.invoice_payer.name) %></h2>
       <div class="card-info-invoice">
         <p>Invoice</p> &nbsp <p class="I"><%= invoice.number %></p>&nbsp <p>total value of</p> &nbsp <p class="I">R$ <%= invoice.total_value %></p> &nbsp<p> sugested monthly fee</p>&nbsp <p class="I">5%</p>
       </div>
@@ -10,7 +10,7 @@
 
   <%= link_to investor_invoice_path(invoice) do %>
     <div class="card-button-invoice text-center">
-      <p class="btn-buy-invoice">View detail</p>
+      <p class="btn-buy-invoice">More details</p>
     </div>
   <% end %>
 </div>

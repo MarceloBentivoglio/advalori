@@ -28,7 +28,7 @@ class Seller::InvoicesController < ApplicationController
       @invoice.save!
     end
 
-    redirect_to seller_path
+    redirect_to seller_invoices_path
   end
 
   def show

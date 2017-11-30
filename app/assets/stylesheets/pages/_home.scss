@@ -8,6 +8,14 @@ body {
   background-color: #fff;
 }
 
+.page-title{
+  margin-top:130px;
+}
+.page-title p{
+  text-shadow: 1px 1px #0000;
+  font-size:25px;
+}
+
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -82,7 +90,7 @@ span.navy {
 }
 
 .bottom-icon {
-  margin-top: 300px;
+  margin-top: 200px;
 }
 
 #team {
@@ -183,9 +191,9 @@ a {
   height: 40vh;
 }
 
-.contact-header {
-  margin-top: 30px;
-}
+// .contact-header {
+//   margin-top: 30px;
+// }
 
 .copyrights {
   margin-top: 130px;
@@ -200,9 +208,12 @@ a {
 }
 
 .follow-us {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .fa-facebook {
   padding: 4px 6px;
+}
+#h3{
+  margin-top:0px;
 }

@@ -34,12 +34,12 @@
 
           <% else %>
             <%= link_to investor_path do %>
-              <%= t(".profile", default: "Dashboard") %>
+              <%= t(".profile", default: "Invoices Market") %>
               <i class="fa fa-dashboard fa-adjusted"></i>
             <% end %>
 
-            <%= link_to investor_invoices_path do %>
-              <%= t(".profile", default: "Invoices") %>
+            <%= link_to investor_orders_path do %>
+              <%= t(".profile", default: "Orders") %>
               <i class="fa fa-list-alt fa-adjusted "></i>
             <% end %>
           <% end %>

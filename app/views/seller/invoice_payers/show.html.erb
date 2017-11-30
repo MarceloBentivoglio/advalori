@@ -20,7 +20,7 @@
         <% @invoice_payers.each do |invoice| %>
         <tr class="tr-highlight-overdue">
           <td><%= invoice.cnpj %></td>
-          <td><%= invoice.name %></td>
+          <td><%= capitalize_words(invoice.name) %></td>
           <td><%= invoice.address_number %></td>
           <td><%= invoice.address_complement %></td>
           <td><%= invoice.neighborhood %></td>
