@@ -2,7 +2,7 @@ class Seller::ExpensesController < ApplicationController
 
   def index
     @expense = Expense.new
-    @expenses = expenses
+    @expenses = expenses.order(due_date: :asc)
   end
 
   def show
