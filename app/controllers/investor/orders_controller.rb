@@ -12,7 +12,7 @@ class Investor::OrdersController < ApplicationController
     @order = Order.new
     @order.investor = current_user.investor
     @order.invoice = invoice
-    @order.fee = 0.95
+    @order.fee = 5
     @order.save
 
     invoice.update!(status: 'Sold')
