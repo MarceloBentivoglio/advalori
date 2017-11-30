@@ -17,7 +17,7 @@ Expense.destroy_all
 invoice_payers = [
   {
     cnpj: "45543915037697",
-    name: "CARREFOUR LTDA",
+    name: "Carrefour Ltda",
     address: "Avenida Engenheiro George Corbisier",
     address_number: "273",
     phone_number:"1137796891",
@@ -56,8 +56,8 @@ invoice_payers = [
 
     {
       cnpj: "07740586000170",
-      name: "ORTHOMETRIC PROD.MEDICOS",
-      address: "RUA IRINEU MARTINS",
+      name: "ORTHOMETRIC PROD MEDICOS",
+      address: "Rua Irineu Martins",
       address_number: "280",
       phone_number:"1433112726",
       state:"SP",
@@ -69,8 +69,8 @@ invoice_payers = [
 
     {
       cnpj: "11109876543210",
-      name: "SAMSUNG",
-      address: "AV PAULISTA",
+      name: "Samsung",
+      address: "Av Paulista",
       address_number: "100",
       phone_number:"1190112726",
       state:"SP",
@@ -82,8 +82,8 @@ invoice_payers = [
 
     {
       cnpj: "11109876543210",
-      name: "SAMSUNG",
-      address: "AV PAULISTA",
+      name: "Samsung",
+      address: "Av Paulista",
       address_number: "100",
       phone_number:"1190112726",
       state:"SP",
@@ -95,8 +95,8 @@ invoice_payers = [
 
     {
       cnpj: "11109876543210",
-      name: "SAMSUNG",
-      address: "AV PAULISTA",
+      name: "Samsung",
+      address: "Av Paulista",
       address_number: "100",
       phone_number:"1190112726",
       state:"SP",
@@ -169,7 +169,7 @@ invoice_payers = [
   investors = [
     {
       cnpj: "123456789",
-      name: "FACTORING LTDA",
+      name: "Factoring Ltda",
       address: "Rua Mourato Coelho",
       address_number: "123",
       address_complement:"",
