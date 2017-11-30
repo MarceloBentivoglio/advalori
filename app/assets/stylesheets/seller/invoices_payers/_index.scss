@@ -1,4 +1,10 @@
-.container-invoices-payer {
-  width: 99%;
-  margin-left: 10px;
+.container-for-tables {
+  // width: 99%;
+  // margin-left: 10px;
+  display: table;
+  min-height: calc(100vh - 100px);
+}
+
+.container-for-cards {
+  min-height: calc(100vh - 100px);
 }

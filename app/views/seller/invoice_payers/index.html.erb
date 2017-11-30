@@ -1,54 +1,50 @@
-<div class="container">
-
-  <div class="container-invoices-payer">
-      <h3 class="chart-title">Invoice Payers</h3>
-      <table class="table table-responsive expense-table th-invoice">
-        <thead>
-          <tr>
-            <th>CNPJ</th>
-            <th>Name</th>
-            <th>Phone Number</th>
-            <th>Address</th>
-            <th>Address Number</th>
-            <th>Neighborhood</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip Code</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @invoice_payers.each do |invoice_payer| %>
-          <tr class="tr-highlight-overdue td-invoice">
-            <td><%= invoice_payer.cnpj %></td>
-            <td class="nowrap"><%= capitalize_words(invoice_payer.name) %></td>
-            <td><%= invoice_payer.phone_number%></td>
-            <td class="nowrap"><%= invoice_payer.address %></td>
-            <td><%= invoice_payer.address_number %></td>
-            <td class="nowrap"><%= invoice_payer.neighborhood %></td>
-            <td class="nowrap"><%= invoice_payer.city%></td>
-            <td><%= invoice_payer.state %></td>
-            <td><%= invoice_payer.zip_code%></td>
-            <td>
-              <%= link_to(edit_seller_invoice_payer_path(invoice_payer), class: "") do %>
-              <i class="fa fa-pencil-square-o"></i>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to(seller_invoice_payer_path(invoice_payer), class: "", method: :delete, "data-confirm" => "Are you sure?" ) do %>
-              <i class="fa fa-trash" aria-hidden="true"></i>
-              <% end %>
-            </td>
-          </tr>
-          <% end %>
-          <tr>
-            <td colspan=11>
-              <%= link_to "New Customer", new_seller_invoice_payer_path, class: "btn-expense" %>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-  </div>
-
+<div class="container container-for-tables">
+    <h3 class="chart-title">Invoice Payers</h3>
+    <table class="table expense-table th-invoice">
+      <thead>
+        <tr>
+          <th>CNPJ</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th>Address Number</th>
+          <th>Neighborhood</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip Code</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @invoice_payers.each do |invoice_payer| %>
+        <tr class="tr-highlight-overdue td-invoice">
+          <td><%= invoice_payer.cnpj %></td>
+          <td class="nowrap"><%= capitalize_words(invoice_payer.name) %></td>
+          <td><%= invoice_payer.phone_number%></td>
+          <td class="nowrap"><%= invoice_payer.address %></td>
+          <td><%= invoice_payer.address_number %></td>
+          <td class="nowrap"><%= invoice_payer.neighborhood %></td>
+          <td class="nowrap"><%= invoice_payer.city%></td>
+          <td><%= invoice_payer.state %></td>
+          <td><%= invoice_payer.zip_code%></td>
+          <td>
+            <%= link_to(edit_seller_invoice_payer_path(invoice_payer), class: "") do %>
+            <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to(seller_invoice_payer_path(invoice_payer), class: "", method: :delete, "data-confirm" => "Are you sure?" ) do %>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+        <tr>
+          <td colspan=11>
+            <%= link_to "New Customer", new_seller_invoice_payer_path, class: "btn-expense" %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 </div>
